@@ -872,11 +872,23 @@ sets of vectors that every matrix comes with.</p>
 <ul>
 <li>The <strong>null space</strong> <span class="arithmatex">\(N(A)\)</span>, also called the <strong>kernel</strong>, is the set of inputs <span class="arithmatex">\(A\)</span> maps to
   zero: all <span class="arithmatex">\(\mathbf{n}\)</span> with <span class="arithmatex">\(A\mathbf{n} = 0\)</span>. Its dimension is <span class="arithmatex">\(n - r\)</span>.</li>
-<li>The <strong>row space</strong> <span class="arithmatex">\(C(A^T)\)</span> holds everything else. Its dimension is also <span class="arithmatex">\(r\)</span>.</li>
+<li>The <strong>row space</strong> <span class="arithmatex">\(C(A^T)\)</span> is every combination of the rows of <span class="arithmatex">\(A\)</span>. Its dimension is
+  also <span class="arithmatex">\(r\)</span>.</li>
 </ul>
-<p>On each side the two spaces are at right angles, and together they cover everything. So
-any input splits as <span class="arithmatex">\(\mathbf{x} = \mathbf{x}_r + \mathbf{x}_n\)</span>, a row-space part plus a
-null-space part, and <span class="arithmatex">\(A\mathbf{x} = A\mathbf{x}_r\)</span>: the null-space part contributes nothing.</p>
+<p>Each shape in the figure above stands for a whole space of vectors through the origin: a
+line, a plane, or a higher-dimensional version. On each side the two spaces are at right
+angles: every vector in one is perpendicular to every vector in the other. On the input
+side, this follows from <span class="arithmatex">\(A\mathbf{n} = 0\)</span>, which says each row of <span class="arithmatex">\(A\)</span> has a zero
+<a href="../vectors_matrices/#vectors">dot product</a> with <span class="arithmatex">\(\mathbf{n}\)</span>. Their dimensions also add
+up to the full space, so every vector is a sum of one piece from each.</p>
+<p>For example, <span class="arithmatex">\(A = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{bmatrix}\)</span> keeps the first two
+entries of <span class="arithmatex">\(\mathbf{x}\)</span> and drops the third. Its row space is the <span class="arithmatex">\(xy\)</span>-plane and its null
+space is the <span class="arithmatex">\(z\)</span>-axis, as in the figure below:</p>
+<p><img alt="An input split into its row-space part in the xy-plane and its null-space part along the z-axis" src="../../assets/figures/plane_and_line.svg#only-light" />
+<img alt="An input split into its row-space part in the xy-plane and its null-space part along the z-axis" src="../../assets/figures/plane_and_line_dark.svg#only-dark" /></p>
+<p>The dashed lines split the input <span class="arithmatex">\(\mathbf{x}\)</span> into its part in the plane, <span class="arithmatex">\(\mathbf{x}_r\)</span>
+(blue), and its part along the line, <span class="arithmatex">\(\mathbf{x}_n\)</span> (orange). <span class="arithmatex">\(A\)</span> keeps <span class="arithmatex">\(\mathbf{x}_r\)</span>
+and discards <span class="arithmatex">\(\mathbf{x}_n\)</span>, so <span class="arithmatex">\(A\mathbf{x} = A\mathbf{x}_r\)</span>.</p>
 <p>A matrix is <strong>full rank</strong> when <span class="arithmatex">\(r\)</span> is as large as its shape allows, the smaller of <span class="arithmatex">\(m\)</span>
 and <span class="arithmatex">\(n\)</span>.</p>
 <h2 id="what-this-means-for-solving">What this means for solving<a class="headerlink" href="#what-this-means-for-solving" title="Permanent link">&para;</a></h2>
