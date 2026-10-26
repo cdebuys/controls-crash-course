@@ -58,6 +58,12 @@ $$
 e^{st} + e^{\bar{s}t} = 2e^{\sigma t}\cos\omega t
 $$
 
+That's a cosine whose amplitude follows $e^{\sigma t}$. The dotted envelope is a plain
+first-order exponential decay, and the oscillation stays inside it:
+
+![A decaying sinusoid inside its exponential envelope](../assets/figures/decaying_sinusoid.svg#only-light)
+![A decaying sinusoid inside its exponential envelope](../assets/figures/decaying_sinusoid_dark.svg#only-dark)
+
 The figure below shows the signal produced by an $s$ in each part of the plane. The faint
 dots below the axis are the conjugate partners of the ones above.
 
