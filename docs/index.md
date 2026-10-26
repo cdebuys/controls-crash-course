@@ -10,8 +10,8 @@ math gets heavy.
 
 ## Chapters
 
-1. [Time Domain and State Space](time_domain.md): first- and second-order systems, the
-   state-space form, linearization, and discrete time.
+1. Time Domain: [dynamic systems](time_domain.md), [state space and
+   linearization](state_space.md), and [discrete time](discrete_time.md).
 2. Frequency Domain *(coming soon)*: the Laplace transform, transfer functions, poles and
    zeros, and Bode plots.
 3. Feedback and Joint Control *(coming soon)*: PID control, root locus, and stability

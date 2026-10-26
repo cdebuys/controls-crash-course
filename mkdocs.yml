@@ -20,7 +20,10 @@ theme:
 
 nav:
   - Home: index.md
-  - 1. Time Domain and State Space: time_domain.md
+  - 1. Time Domain:
+      - Dynamic Systems: time_domain.md
+      - State Space and Linearization: state_space.md
+      - Discrete Time: discrete_time.md
 
 markdown_extensions:
   - admonition
