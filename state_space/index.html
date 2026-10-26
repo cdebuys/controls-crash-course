@@ -930,6 +930,11 @@ eigenvalues of <span class="arithmatex">\(A\)</span> <em>are</em> the characteri
 <li>Eigenvalues on the imaginary axis, with none to the right: it oscillates forever
   without growing or decaying, like the undamped spring.</li>
 </ul>
+<p>In the complex plane, stable means every eigenvalue sits in the left half. This figure
+from <a href="../math/complex_numbers/">Complex Numbers</a> shows the motion each location produces,
+and that eigenvalues farther left decay faster:</p>
+<p><img alt="Root positions in the complex plane and the signal each produces" src="../assets/figures/s_plane_map.svg#only-light" />
+<img alt="Root positions in the complex plane and the signal each produces" src="../assets/figures/s_plane_map_dark.svg#only-dark" /></p>
 <p>In code, that's one call:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Eigen/Dense&gt;</span>
 
