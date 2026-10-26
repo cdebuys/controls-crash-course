@@ -1,0 +1,38 @@
+name: Publish textbook
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# gh-deploy pushes the built site to the gh-pages branch.
+permissions:
+  contents: write
+
+# Don't let two deploys race each other on gh-pages.
+concurrency:
+  group: publish-textbook
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git identity for gh-pages commits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.x"
+
+      - name: Install MkDocs Material
+        run: pip install "mkdocs-material==9.8.*"
+
+      - name: Build and deploy
+        run: mkdocs gh-deploy --force --strict
