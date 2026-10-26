@@ -49,7 +49,13 @@ The dashed lines split the input $\mathbf{x}$ into its part in the plane, $\math
 and discards $\mathbf{x}_n$, so $A\mathbf{x} = A\mathbf{x}_r$.
 
 A matrix is **full rank** when $r$ is as large as its shape allows, the smaller of $m$
-and $n$.
+and $n$. The example above is full rank: its rank is 2, so it reaches every point in its
+2D output space. Add a row of zeros, giving
+$\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}$, and it does the same
+thing, but its outputs now live in 3D. It still only reaches the $xy$-plane, so its rank
+of 2 falls short of 3: it isn't full rank, and its left null space is the $z$-axis, the
+outputs it can never produce. A full-rank $3 \times 3$ matrix, by contrast, reaches all of
+3D space and discards nothing.
 
 ## What this means for solving
 
