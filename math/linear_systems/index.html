@@ -450,10 +450,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-inverse" class="md-nav__link">
+  <a href="#the-four-subspaces" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The inverse
+        The four subspaces
       
     </span>
   </a>
@@ -461,10 +461,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-determinant" class="md-nav__link">
+  <a href="#what-this-means-for-solving" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The determinant
+        What this means for solving
       
     </span>
   </a>
@@ -472,10 +472,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rank-and-null-space" class="md-nav__link">
+  <a href="#square-matrices-the-inverse-and-the-determinant" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rank and null space
+        Square matrices: the inverse and the determinant
       
     </span>
   </a>
@@ -786,10 +786,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-inverse" class="md-nav__link">
+  <a href="#the-four-subspaces" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The inverse
+        The four subspaces
       
     </span>
   </a>
@@ -797,10 +797,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-determinant" class="md-nav__link">
+  <a href="#what-this-means-for-solving" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The determinant
+        What this means for solving
       
     </span>
   </a>
@@ -808,10 +808,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rank-and-null-space" class="md-nav__link">
+  <a href="#square-matrices-the-inverse-and-the-determinant" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rank and null space
+        Square matrices: the inverse and the determinant
       
     </span>
   </a>
@@ -855,37 +855,67 @@ find <span class="arithmatex">\(\mathbf{x}\)</span> such that</p>
 <div class="arithmatex">\[
 A\mathbf{x} = \mathbf{b}
 \]</div>
-<h2 id="the-inverse">The inverse<a class="headerlink" href="#the-inverse" title="Permanent link">&para;</a></h2>
-<p>If <span class="arithmatex">\(A\)</span> is square and <strong>invertible</strong>, there is a matrix <span class="arithmatex">\(A^{-1}\)</span> with <span class="arithmatex">\(A^{-1}A = I\)</span>, and the
-unique solution is <span class="arithmatex">\(\mathbf{x} = A^{-1}\mathbf{b}\)</span>.</p>
+<p>If <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(m \times n\)</span>, it takes inputs <span class="arithmatex">\(\mathbf{x}\)</span> with <span class="arithmatex">\(n\)</span> entries and produces outputs
+with <span class="arithmatex">\(m\)</span> entries. Whether this equation has a solution, and how many, depends on four
+sets of vectors that every matrix comes with.</p>
+<h2 id="the-four-subspaces">The four subspaces<a class="headerlink" href="#the-four-subspaces" title="Permanent link">&para;</a></h2>
+<p><img alt="The four fundamental subspaces of A" src="../../assets/figures/four_subspaces.svg#only-light" />
+<img alt="The four fundamental subspaces of A" src="../../assets/figures/four_subspaces_dark.svg#only-dark" /></p>
+<p>On the output side:</p>
+<ul>
+<li>The <strong>column space</strong> <span class="arithmatex">\(C(A)\)</span>, also called the <strong>range</strong> or <strong>image</strong>, is the set of all
+  outputs <span class="arithmatex">\(A\mathbf{x}\)</span> can produce. Its dimension is the <strong>rank</strong> <span class="arithmatex">\(r\)</span> of <span class="arithmatex">\(A\)</span>.</li>
+<li>The <strong>left null space</strong> <span class="arithmatex">\(N(A^T)\)</span> holds the output directions <span class="arithmatex">\(A\)</span> can never produce. Its
+  dimension is <span class="arithmatex">\(m - r\)</span>.</li>
+</ul>
+<p>On the input side:</p>
+<ul>
+<li>The <strong>null space</strong> <span class="arithmatex">\(N(A)\)</span>, also called the <strong>kernel</strong>, is the set of inputs <span class="arithmatex">\(A\)</span> maps to
+  zero: all <span class="arithmatex">\(\mathbf{n}\)</span> with <span class="arithmatex">\(A\mathbf{n} = 0\)</span>. Its dimension is <span class="arithmatex">\(n - r\)</span>.</li>
+<li>The <strong>row space</strong> <span class="arithmatex">\(C(A^T)\)</span> holds everything else. Its dimension is also <span class="arithmatex">\(r\)</span>.</li>
+</ul>
+<p>On each side the two spaces are at right angles, and together they cover everything. So
+any input splits as <span class="arithmatex">\(\mathbf{x} = \mathbf{x}_r + \mathbf{x}_n\)</span>, a row-space part plus a
+null-space part, and <span class="arithmatex">\(A\mathbf{x} = A\mathbf{x}_r\)</span>: the null-space part contributes nothing.</p>
+<p>A matrix is <strong>full rank</strong> when <span class="arithmatex">\(r\)</span> is as large as its shape allows, the smaller of <span class="arithmatex">\(m\)</span>
+and <span class="arithmatex">\(n\)</span>.</p>
+<h2 id="what-this-means-for-solving">What this means for solving<a class="headerlink" href="#what-this-means-for-solving" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A solution exists only if <span class="arithmatex">\(\mathbf{b}\)</span> is in the column space.</li>
+<li>If the null space contains anything besides zero, solutions aren't unique: if
+  <span class="arithmatex">\(\mathbf{x}\)</span> solves <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span>, so does <span class="arithmatex">\(\mathbf{x} + \mathbf{n}\)</span> for any
+  <span class="arithmatex">\(\mathbf{n}\)</span> in the null space.</li>
+</ul>
+<h2 id="square-matrices-the-inverse-and-the-determinant">Square matrices: the inverse and the determinant<a class="headerlink" href="#square-matrices-the-inverse-and-the-determinant" title="Permanent link">&para;</a></h2>
+<p>A square matrix is <strong>invertible</strong> when its null space is just zero. Then there's a matrix
+<span class="arithmatex">\(A^{-1}\)</span> with <span class="arithmatex">\(A^{-1}A = I\)</span>, and every <span class="arithmatex">\(\mathbf{b}\)</span> has exactly one solution,
+<span class="arithmatex">\(\mathbf{x} = A^{-1}\mathbf{b}\)</span>.</p>
 <div class="admonition tip">
 <p class="admonition-title">In code</p>
 <p>Don't form the inverse explicitly. Ask a solver instead, which is faster and more
 accurate: <code>Eigen::VectorXd x = A.colPivHouseholderQr().solve(b);</code></p>
 </div>
-<h2 id="the-determinant">The determinant<a class="headerlink" href="#the-determinant" title="Permanent link">&para;</a></h2>
-<p>The <strong>determinant</strong> of a square matrix is a single number. For a <span class="arithmatex">\(2 \times 2\)</span> matrix,</p>
+<p>The <strong>determinant</strong> tests this with a single number. For a <span class="arithmatex">\(2 \times 2\)</span> matrix,</p>
 <div class="arithmatex">\[
 \det \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} = ad - bc
 \]</div>
-<p>Geometrically, it's how much <span class="arithmatex">\(A\)</span> scales area (or volume). If <span class="arithmatex">\(\det A = 0\)</span>, <span class="arithmatex">\(A\)</span> squashes
-space flat, information is lost, and <span class="arithmatex">\(A\)</span> has no inverse. Such a matrix is <strong>singular</strong>.</p>
-<h2 id="rank-and-null-space">Rank and null space<a class="headerlink" href="#rank-and-null-space" title="Permanent link">&para;</a></h2>
-<p>The <strong>rank</strong> of a matrix is the number of independent directions it can produce: the
-dimension of the set of all possible outputs <span class="arithmatex">\(A\mathbf{x}\)</span>. A matrix that reaches every
-direction it could is <strong>full rank</strong>.</p>
-<p>The <strong>null space</strong> is the set of inputs that <span class="arithmatex">\(A\)</span> maps to zero: all <span class="arithmatex">\(\mathbf{n}\)</span> with
-<span class="arithmatex">\(A\mathbf{n} = 0\)</span>. If it contains anything besides zero, solutions aren't unique: if
-<span class="arithmatex">\(\mathbf{x}\)</span> solves <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span>, so does <span class="arithmatex">\(\mathbf{x} + \mathbf{n}\)</span>.</p>
+<p>Geometrically, it's how much <span class="arithmatex">\(A\)</span> scales area (or volume). If <span class="arithmatex">\(\det A = 0\)</span>, the null
+space contains a nonzero vector, so different inputs produce the same output, the input
+can't be recovered, and <span class="arithmatex">\(A\)</span> has no inverse. Such a matrix is <strong>singular</strong>.</p>
+<p>For example, in <span class="arithmatex">\(\begin{bmatrix} 1 &amp; 2 \\ 2 &amp; 4 \end{bmatrix}\)</span> the second column is twice
+the first. Its determinant is <span class="arithmatex">\(1 \cdot 4 - 2 \cdot 2 = 0\)</span>, its rank is 1, and
+<span class="arithmatex">\([2,\ -1]^T\)</span> is in its null space.</p>
 <h2 id="the-pseudo-inverse">The pseudo-inverse<a class="headerlink" href="#the-pseudo-inverse" title="Permanent link">&para;</a></h2>
-<p>When <span class="arithmatex">\(A\)</span> isn't square, or isn't invertible, the <strong>pseudo-inverse</strong> <span class="arithmatex">\(A^+\)</span> gives the best
-available answer <span class="arithmatex">\(\mathbf{x} = A^+\mathbf{b}\)</span>:</p>
+<p>When <span class="arithmatex">\(A\)</span> isn't square, or is singular, the <strong>pseudo-inverse</strong> <span class="arithmatex">\(A^+\)</span> still gives the best
+available answer, <span class="arithmatex">\(\mathbf{x} = A^+\mathbf{b}\)</span>. In terms of the figure:</p>
 <ul>
-<li><strong>More equations than unknowns</strong> (tall <span class="arithmatex">\(A\)</span>, usually no exact solution): <span class="arithmatex">\(A^+\mathbf{b}\)</span>
-  is the <strong>least-squares</strong> solution, the one that makes <span class="arithmatex">\(|A\mathbf{x} - \mathbf{b}|\)</span> as small as
-  possible. For full-rank <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(A^+ = (A^TA)^{-1}A^T\)</span>.</li>
-<li><strong>Fewer equations than unknowns</strong> (wide <span class="arithmatex">\(A\)</span>, infinitely many solutions): <span class="arithmatex">\(A^+\mathbf{b}\)</span> is
-  the solution with the smallest <span class="arithmatex">\(|\mathbf{x}|\)</span>. For full-rank <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(A^+ = A^T(AA^T)^{-1}\)</span>.</li>
+<li><strong>If <span class="arithmatex">\(\mathbf{b}\)</span> isn't in the column space</strong>, there's no exact solution. <span class="arithmatex">\(A^+\)</span> solves for
+  the closest point that is, which makes <span class="arithmatex">\(|A\mathbf{x} - \mathbf{b}|\)</span> as small as possible.
+  This is the <strong>least-squares</strong> solution. For a tall, full-rank <span class="arithmatex">\(A\)</span>,
+  <span class="arithmatex">\(A^+ = (A^TA)^{-1}A^T\)</span>.</li>
+<li><strong>If the null space isn't just zero</strong>, there are infinitely many solutions. <span class="arithmatex">\(A^+\)</span> picks
+  the one with no null-space part, which lies entirely in the row space and has the
+  smallest <span class="arithmatex">\(|\mathbf{x}|\)</span>. For a wide, full-rank <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(A^+ = A^T(AA^T)^{-1}\)</span>.</li>
 </ul>
 <p>In Eigen: <code>A.completeOrthogonalDecomposition().pseudoInverse()</code>.</p>
 

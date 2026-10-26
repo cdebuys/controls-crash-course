@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470" font-family="sans-serif" role="img" aria-labelledby="fs-title">
+  <title id="fs-title">The four fundamental subspaces of a matrix A</title>
+  <style>
+    .text  { fill: #222; }
+    .muted { fill: #666; }
+    .edge  { stroke: #666; stroke-width: 1.5; }
+    .range { fill: #3f51b5; fill-opacity: 0.18; }
+    .null  { fill: #e65100; fill-opacity: 0.18; }
+    .arrow { stroke: #222; stroke-width: 1.8; fill: none; }
+    .dot   { fill: #222; }
+  </style>
+  <defs>
+    <marker id="fs-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="dot"/>
+    </marker>
+  </defs>
+
+  <text x="274" y="24" text-anchor="middle" font-size="17" class="text">Inputs, ℝⁿ</text>
+  <text x="546" y="24" text-anchor="middle" font-size="17" class="text">Outputs, ℝᵐ</text>
+
+  <g transform="translate(0, 30)">
+    <!-- Input side: row space and null space, perpendicular, meeting at the origin -->
+    <polygon points="320,215 178.6,73.6 228.1,24.1 369.5,165.5" class="range edge"/>
+    <polygon points="320,215 178.6,356.4 228.1,405.9 369.5,264.5" class="null edge"/>
+    <path d="M 310.1,205.1 L 300.2,215 L 310.1,224.9" class="edge" fill="none"/>
+    <circle cx="320" cy="215" r="4.5" class="dot"/>
+    <text x="331" y="220" font-size="14" class="text">0</text>
+
+    <!-- Output side: column space and left null space -->
+    <polygon points="500,215 641.4,73.6 591.9,24.1 450.5,165.5" class="range edge"/>
+    <polygon points="500,215 641.4,356.4 591.9,405.9 450.5,264.5" class="null edge"/>
+    <path d="M 509.9,205.1 L 519.8,215 L 509.9,224.9" class="edge" fill="none"/>
+    <circle cx="500" cy="215" r="4.5" class="dot"/>
+    <text x="496" y="242" font-size="14" class="text">0</text>
+
+    <!-- Labels -->
+    <g font-size="14" text-anchor="end">
+      <text x="168" y="62" font-weight="bold" class="text">row space</text>
+      <text x="168" y="81" class="text">C(Aᵀ)</text>
+      <text x="168" y="100" class="muted">dim r</text>
+      <text x="168" y="345" font-weight="bold" class="text">null space</text>
+      <text x="168" y="364" class="text">N(A)</text>
+      <text x="168" y="383" class="muted">dim n - r</text>
+    </g>
+    <g font-size="14" text-anchor="start">
+      <text x="652" y="62" font-weight="bold" class="text">column space</text>
+      <text x="652" y="81" class="text">C(A)</text>
+      <text x="652" y="100" class="muted">dim r</text>
+      <text x="652" y="345" font-weight="bold" class="text">left null space</text>
+      <text x="652" y="364" class="text">N(Aᵀ)</text>
+      <text x="652" y="383" class="muted">dim m - r</text>
+    </g>
+
+    <!-- Example vectors and how A maps them -->
+    <circle cx="274" cy="120" r="3.5" class="dot"/>
+    <text x="248" y="125" font-size="15" font-style="italic" class="text">xᵣ</text>
+    <circle cx="546" cy="120" r="3.5" class="dot"/>
+    <text x="556" y="125" font-size="15" font-style="italic" class="text">b</text>
+    <path d="M 280 112 C 340 50, 480 50, 539 112" class="arrow" marker-end="url(#fs-head)"/>
+    <text x="410" y="52" text-anchor="middle" font-size="15" font-style="italic" class="text">A xᵣ = b</text>
+
+    <circle cx="274" cy="310" r="3.5" class="dot"/>
+    <text x="248" y="315" font-size="15" font-style="italic" class="text">xₙ</text>
+    <path d="M 281 306 C 360 300, 420 220, 492 215" class="arrow" marker-end="url(#fs-head)"/>
+    <text x="418" y="300" text-anchor="middle" font-size="15" font-style="italic" class="text">A xₙ = 0</text>
+  </g>
+</svg>
