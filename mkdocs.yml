@@ -20,7 +20,7 @@ theme:
 
 nav:
   - Home: index.md
-  - 1. Time Domain: time_domain.md
+  - 1. Time Domain and State Space: time_domain.md
 
 markdown_extensions:
   - admonition
