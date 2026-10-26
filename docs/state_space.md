@@ -70,6 +70,13 @@ eigenvalues of $A$ *are* the characteristic roots, and they decide how the syste
 - Eigenvalues on the imaginary axis, with none to the right: it oscillates forever
   without growing or decaying, like the undamped spring.
 
+In the complex plane, stable means every eigenvalue sits in the left half. This figure
+from [Complex Numbers](math/complex_numbers.md) shows the motion each location produces,
+and that eigenvalues farther left decay faster:
+
+![Root positions in the complex plane and the signal each produces](assets/figures/s_plane_map.svg#only-light)
+![Root positions in the complex plane and the signal each produces](assets/figures/s_plane_map_dark.svg#only-dark)
+
 In code, that's one call:
 
 ```cpp
