@@ -922,19 +922,27 @@ space contains a nonzero vector, so different inputs produce the same output, th
 can't be recovered, and <span class="arithmatex">\(A\)</span> has no inverse. Such a matrix is <strong>singular</strong>.</p>
 <p>For example, in <span class="arithmatex">\(\begin{bmatrix} 1 &amp; 2 \\ 2 &amp; 4 \end{bmatrix}\)</span> the second column is twice
 the first. Its determinant is <span class="arithmatex">\(1 \cdot 4 - 2 \cdot 2 = 0\)</span>, its rank is 1, and
-<span class="arithmatex">\([2,\ -1]^T\)</span> is in its null space.</p>
+<span class="arithmatex">\([2,\ -1]^T\)</span> is in its null space. The figure shows the unit square mapped by an invertible
+matrix and by this singular one. The middle panel's matrix has determinant 2.5, so it scales
+the square's area by 2.5.</p>
+<p><img alt="The unit square mapped by an invertible matrix, and flattened onto a line by a singular one" src="../../assets/figures/determinant_area.svg#only-light" />
+<img alt="The unit square mapped by an invertible matrix, and flattened onto a line by a singular one" src="../../assets/figures/determinant_area_dark.svg#only-dark" /></p>
 <h2 id="the-pseudo-inverse">The pseudo-inverse<a class="headerlink" href="#the-pseudo-inverse" title="Permanent link">&para;</a></h2>
 <p>When <span class="arithmatex">\(A\)</span> isn't square, or is singular, the <strong>pseudo-inverse</strong> <span class="arithmatex">\(A^+\)</span> still gives the best
-available answer, <span class="arithmatex">\(\mathbf{x} = A^+\mathbf{b}\)</span>. In terms of the figure:</p>
+available answer, <span class="arithmatex">\(\mathbf{x} = A^+\mathbf{b}\)</span>. In terms of the four subspaces:</p>
 <ul>
 <li><strong>If <span class="arithmatex">\(\mathbf{b}\)</span> isn't in the column space</strong>, there's no exact solution. <span class="arithmatex">\(A^+\)</span> solves for
-  the closest point that is, which makes <span class="arithmatex">\(|A\mathbf{x} - \mathbf{b}|\)</span> as small as possible.
+  the closest point in the column space, where the error to <span class="arithmatex">\(\mathbf{b}\)</span> is perpendicular, as
+  in the figure below. That makes <span class="arithmatex">\(|A\mathbf{x} - \mathbf{b}|\)</span> as small as possible.
   This is the <strong>least-squares</strong> solution. For a tall, full-rank <span class="arithmatex">\(A\)</span>,
   <span class="arithmatex">\(A^+ = (A^TA)^{-1}A^T\)</span>.</li>
 <li><strong>If the null space isn't just zero</strong>, there are infinitely many solutions. <span class="arithmatex">\(A^+\)</span> picks
   the one with no null-space part, which lies entirely in the row space and has the
   smallest <span class="arithmatex">\(|\mathbf{x}|\)</span>. For a wide, full-rank <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(A^+ = A^T(AA^T)^{-1}\)</span>.</li>
 </ul>
+<p>The first case, least squares, looks like this:</p>
+<p><img alt="Least squares: the closest point to b in the column space, with the error perpendicular" src="../../assets/figures/least_squares_projection.svg#only-light" />
+<img alt="Least squares: the closest point to b in the column space, with the error perpendicular" src="../../assets/figures/least_squares_projection_dark.svg#only-dark" /></p>
 <p>In Eigen: <code>A.completeOrthogonalDecomposition().pseudoInverse()</code>.</p>
 
 

@@ -867,6 +867,11 @@ as the point <span class="arithmatex">\((a, b)\)</span> on the <strong>complex p
 \qquad
 \angle z = \operatorname{atan2}(b, a)
 \]</div>
+<p><img alt="A complex number as a point with magnitude and angle, and its conjugate" src="../../assets/figures/complex_polar.svg#only-light" />
+<img alt="A complex number as a point with magnitude and angle, and its conjugate" src="../../assets/figures/complex_polar_dark.svg#only-dark" /></p>
+<p>In the figure, <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> are the point's coordinates, <span class="arithmatex">\(|z|\)</span> is its distance from the
+origin, and the angle is measured from the real axis. The conjugate is the mirror image
+across the real axis.</p>
 <h2 id="eulers-formula">Euler's formula<a class="headerlink" href="#eulers-formula" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[
 e^{j\theta} = \cos\theta + j\sin\theta
@@ -884,34 +889,12 @@ signal:</p>
 <div class="arithmatex">\[
 e^{st} + e^{\bar{s}t} = 2e^{\sigma t}\cos\omega t
 \]</div>
-<table>
-<thead>
-<tr>
-<th></th>
-<th><span class="arithmatex">\(\omega = 0\)</span></th>
-<th><span class="arithmatex">\(\omega \neq 0\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(\sigma &lt; 0\)</span></td>
-<td>decays</td>
-<td>decaying oscillation</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\sigma = 0\)</span></td>
-<td>constant</td>
-<td>steady oscillation</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\sigma &gt; 0\)</span></td>
-<td>grows</td>
-<td>growing oscillation</td>
-</tr>
-</tbody>
-</table>
-<p>This table comes back throughout the course: the real part of <span class="arithmatex">\(s\)</span> decides decay or
-growth, and the imaginary part decides oscillation.</p>
+<p>The figure below shows the signal produced by an <span class="arithmatex">\(s\)</span> in each part of the plane. The faint
+dots below the axis are the conjugate partners of the ones above.</p>
+<p><img alt="Root positions in the complex plane and the signal each produces" src="../../assets/figures/s_plane_map.svg#only-light" />
+<img alt="Root positions in the complex plane and the signal each produces" src="../../assets/figures/s_plane_map_dark.svg#only-dark" /></p>
+<p>The real part of <span class="arithmatex">\(s\)</span> decides decay or growth, and the imaginary part decides oscillation.
+This picture comes back throughout the course.</p>
 <p>In C++, <code>std::complex&lt;double&gt;</code> provides all of this, including <code>std::abs</code>, <code>std::arg</code>,
 and <code>std::exp</code>.</p>
 

@@ -856,14 +856,17 @@
 mass it's <span class="arithmatex">\(\tfrac{1}{2}mv^2\)</span>, and for a robot arm it's <span class="arithmatex">\(\tfrac{1}{2}\dot{\mathbf{q}}^T M \dot{\mathbf{q}}\)</span>.</p>
 <p><span class="arithmatex">\(Q\)</span> is <strong>positive definite</strong> if <span class="arithmatex">\(\mathbf{x}^T Q \mathbf{x} &gt; 0\)</span> for every nonzero <span class="arithmatex">\(\mathbf{x}\)</span>.
 Equivalently, all its eigenvalues are positive. Its graph is a bowl with a single lowest
-point.</p>
+point. A matrix with eigenvalues of both signs gives a saddle instead. Along some
+directions a saddle curves up, along others down, so it has no minimum:</p>
+<p><img alt="Contours of a positive-definite quadratic, a bowl, and an indefinite one, a saddle" src="../../assets/figures/quadratic_bowl_saddle.svg#only-light" />
+<img alt="Contours of a positive-definite quadratic, a bowl, and an indefinite one, a saddle" src="../../assets/figures/quadratic_bowl_saddle_dark.svg#only-dark" /></p>
 <h2 id="minimizing-a-quadratic">Minimizing a quadratic<a class="headerlink" href="#minimizing-a-quadratic" title="Permanent link">&para;</a></h2>
 <p>To minimize</p>
 <div class="arithmatex">\[
 f(\mathbf{x}) = \tfrac{1}{2}\mathbf{x}^T Q \mathbf{x} - \mathbf{c}^T\mathbf{x}
 \]</div>
 <p>with <span class="arithmatex">\(Q\)</span> positive definite, set every partial derivative to zero. That gives a linear
-system, <span class="arithmatex">\(Q\mathbf{x} = \mathbf{c}\)</span>, with one solution: the bottom of the bowl.</p>
+system, <span class="arithmatex">\(Q\mathbf{x} = \mathbf{c}\)</span>, with one solution: the bottom of the bowl in the figure.</p>
 <h2 id="least-squares">Least squares<a class="headerlink" href="#least-squares" title="Permanent link">&para;</a></h2>
 <p>When <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span> has no exact solution, minimize the error
 <span class="arithmatex">\(|A\mathbf{x} - \mathbf{b}|^2\)</span> instead. This is a quadratic, and setting its derivatives to zero

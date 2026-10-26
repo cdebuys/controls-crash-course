@@ -866,8 +866,12 @@ variable,</p>
 <div class="arithmatex">\[
 f(\bar{x} + \delta x) \approx f(\bar{x}) + f'(\bar{x})\,\delta x
 \]</div>
-<p>For example, <span class="arithmatex">\(\sin\theta \approx \theta\)</span> near <span class="arithmatex">\(\theta = 0\)</span>. With several variables, each
-one contributes its own partial derivative times its own small change.</p>
+<p>For example, <span class="arithmatex">\(\sin\theta \approx \theta\)</span> near <span class="arithmatex">\(\theta = 0\)</span>:</p>
+<p><img alt="sin theta and its tangent line theta agree near zero" src="../../assets/figures/linear_approximation.svg#only-light" />
+<img alt="sin theta and its tangent line theta agree near zero" src="../../assets/figures/linear_approximation_dark.svg#only-dark" /></p>
+<p>The dashed tangent line and the curve are almost identical inside the shaded band, and
+drift apart outside it. With several variables, each one contributes its own partial derivative times its own
+small change.</p>
 <h2 id="the-jacobian">The Jacobian<a class="headerlink" href="#the-jacobian" title="Permanent link">&para;</a></h2>
 <p>For a function that takes a vector in and gives a vector out, collect all the partial
 derivatives into a matrix, the <strong>Jacobian</strong>:</p>
@@ -885,8 +889,13 @@ J = \begin{bmatrix} \cos\theta &amp; -r\sin\theta \\ \sin\theta &amp; r\cos\thet
 \qquad
 \det J = r
 \]</div>
-<p>At <span class="arithmatex">\(r = 0\)</span> the determinant is zero, so <span class="arithmatex">\(J\)</span> is singular: changing <span class="arithmatex">\(\theta\)</span> does nothing to
-the position. A robot arm's Jacobian works the same way, and Chapter 4 is about exactly
+<p>A small circle of input changes around a point maps to an ellipse of position changes.
+It's stretched by <span class="arithmatex">\(r\)</span> in the <span class="arithmatex">\(\theta\)</span> direction, because turning by <span class="arithmatex">\(\theta\)</span> moves the point
+along an arc of radius <span class="arithmatex">\(r\)</span>:</p>
+<p><img alt="A small circle of inputs maps through the Jacobian to an ellipse of outputs" src="../../assets/figures/jacobian_ellipse.svg#only-light" />
+<img alt="A small circle of inputs maps through the Jacobian to an ellipse of outputs" src="../../assets/figures/jacobian_ellipse_dark.svg#only-dark" /></p>
+<p>At <span class="arithmatex">\(r = 0\)</span> the determinant is zero, so <span class="arithmatex">\(J\)</span> is singular: the ellipse collapses to a line,
+and changing <span class="arithmatex">\(\theta\)</span> does nothing to the position. A robot arm's Jacobian works the same way, and Chapter 4 is about exactly
 these situations.</p>
 
 

@@ -878,12 +878,17 @@ m\dot{v} + bv = u
 See <a href="../math/differential_equations/">Differential Equations</a>.</p>
 </div>
 <p>With no push, the speed decays as <span class="arithmatex">\(e^{-t/\tau}\)</span>, where <span class="arithmatex">\(\tau = m/b\)</span> is the <strong>time
-constant</strong>. With a constant push, the speed rises toward <span class="arithmatex">\(u/b\)</span> along the same curve: it
-covers 63% of the way after <span class="arithmatex">\(\tau\)</span> seconds and is essentially there after <span class="arithmatex">\(4\tau\)</span>.</p>
+constant</strong>. With a constant push, the speed rises toward <span class="arithmatex">\(u/b\)</span> along the curve in the
+figure. It covers 63% of the way after one time constant and is essentially done after
+four.</p>
+<p><img alt="First-order step response with the time constant marked at 63 percent" src="../assets/figures/first_order_step.svg#only-light" />
+<img alt="First-order step response with the time constant marked at 63 percent" src="../assets/figures/first_order_step_dark.svg#only-dark" /></p>
 <h2 id="second-order-systems">Second-order systems<a class="headerlink" href="#second-order-systems" title="Permanent link">&para;</a></h2>
 <p>Add a spring and the system can store energy in two places, as motion and as spring
 stretch, and trade it back and forth. That's what makes oscillation possible.</p>
-<p>A block of mass <span class="arithmatex">\(m\)</span> is connected to a wall by a spring of stiffness <span class="arithmatex">\(k\)</span> and a damper with
+<p><img alt="A mass-spring-damper: a block tied to a wall by a spring and a damper" src="../assets/figures/mass_spring_damper.svg#only-light" />
+<img alt="A mass-spring-damper: a block tied to a wall by a spring and a damper" src="../assets/figures/mass_spring_damper_dark.svg#only-dark" /></p>
+<p>In the figure, a block of mass <span class="arithmatex">\(m\)</span> is connected to a wall by a spring of stiffness <span class="arithmatex">\(k\)</span> and a damper with
 coefficient <span class="arithmatex">\(b\)</span>. The spring pulls back with force <span class="arithmatex">\(-kx\)</span>, the damper resists motion with
 <span class="arithmatex">\(-b\dot{x}\)</span>, and we push with <span class="arithmatex">\(u\)</span>. Newton's second law gives</p>
 <div class="arithmatex">\[
@@ -931,7 +936,10 @@ ratio</strong> <span class="arithmatex">\(\zeta\)</span> decides what kind of ro
 </tr>
 </tbody>
 </table>
-<p>Here <span class="arithmatex">\(\omega_d = \omega_n\sqrt{1 - \zeta^2}\)</span> is the frequency it actually oscillates at.</p>
+<p>Here <span class="arithmatex">\(\omega_d = \omega_n\sqrt{1 - \zeta^2}\)</span> is the frequency it actually oscillates at. The
+figure shows the roots moving as <span class="arithmatex">\(\zeta\)</span> increases, with <span class="arithmatex">\(\omega_n\)</span> fixed:</p>
+<p><img alt="Roots of the mass-spring-damper as the damping ratio increases" src="../assets/figures/roots_vs_zeta.svg#only-light" />
+<img alt="Roots of the mass-spring-damper as the damping ratio increases" src="../assets/figures/roots_vs_zeta_dark.svg#only-dark" /></p>
 <div class="admonition info">
 <p class="admonition-title">Refresher</p>
 <p>A complex pair <span class="arithmatex">\(\sigma \pm j\omega\)</span> gives a solution <span class="arithmatex">\(e^{\sigma t}\cos\omega t\)</span>: an

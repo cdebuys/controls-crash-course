@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 130 620 260" font-family="sans-serif" role="img"><title>Least squares: the closest point to b in the column space, with the error perpendicular to it</title><style>
+    .text {fill:#222} .muted {fill:#666}
+    .axis {stroke:#666; stroke-width:1.4; fill:none}
+    .edge {stroke:#666; stroke-width:1.5}
+    .guide {stroke:#666; stroke-width:1.2; stroke-dasharray:5 4; fill:none}
+    .fill-p {fill:#3f51b5; fill-opacity:0.18} .fill-a {fill:#e65100; fill-opacity:0.18}
+    .shade-p {fill:#3f51b5; fill-opacity:0.07} .shade-a {fill:#e65100; fill-opacity:0.07}
+    .line-t {stroke:#222; stroke-width:2.2; fill:none}
+    .line-p {stroke:#3f51b5; stroke-width:2.4; fill:none}
+    .line-a {stroke:#e65100; stroke-width:2.4; fill:none}
+    .line-m {stroke:#666; stroke-width:1.6; fill:none}
+    .thin-p {stroke:#3f51b5; stroke-width:1.6; fill:none}
+    .thin-a {stroke:#e65100; stroke-width:1.6; fill:none}
+    .dash-p {stroke:#3f51b5; stroke-width:2; stroke-dasharray:6 4; fill:none}
+    .dash-a {stroke:#e65100; stroke-width:2; stroke-dasharray:6 4; fill:none}
+    .dot {fill:#222} .dot-p {fill:#3f51b5} .dot-a {fill:#e65100} .dot-m {fill:#666}
+    .faint {opacity:0.35} .bg {fill:#ffffff}
+</style><defs><marker id="head-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222"/></marker><marker id="head-p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3f51b5"/></marker><marker id="head-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#e65100"/></marker><marker id="head-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#666"/></marker></defs><polygon points="229.8,197.6 58.2,322.4 370.2,322.4 541.8,197.6" class="fill-p"/>
+<polygon points="229.8,197.6 58.2,322.4 370.2,322.4 541.8,197.6" class="edge" fill="none"/>
+<line x1="300.0" y1="260.0" x2="366.3" y2="287.9" class="line-p" marker-end="url(#head-p)" />
+<line x1="300.0" y1="260.0" x2="366.9" y2="159.2" class="line-t" marker-end="url(#head-t)" />
+<line x1="368.4" y1="288.8" x2="368.4" y2="159.8" class="line-a" marker-end="url(#head-a)" />
+<path d="M368.4,275.8 L356.4,270.8 L356.4,283.8" class="line-m" stroke-width="1.2"/>
+<circle cx="300.0" cy="260.0" r="4" class="dot" />
+<circle cx="368.4" cy="288.8" r="4" class="dot-p" />
+<text x="378.4" y="154.8" font-size="17" text-anchor="start" class="text" font-style="italic" font-weight="bold">b</text>
+<line x1="372.4" y1="294.8" x2="392.0" y2="336.0" class="guide" />
+<text x="396.0" y="344.0" font-size="14" text-anchor="start" class="text">closest point in C(A)</text>
+<text x="382.4" y="186.0" font-size="14" text-anchor="start" class="muted">error: perpendicular to C(A)</text>
+<text x="286.0" y="279.0" font-size="14" text-anchor="end" class="text">0</text>
+<text x="60.0" y="350.0" font-size="14" text-anchor="start" class="text" font-weight="bold">column space C(A)</text>
+<text x="60.0" y="368.0" font-size="14" text-anchor="start" class="muted">every output A can produce</text></svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" font-family="sans-serif" role="img"><title>A small circle of inputs maps through the Jacobian to an ellipse of outputs</title><style>
+    .text {fill:#222} .muted {fill:#666}
+    .axis {stroke:#666; stroke-width:1.4; fill:none}
+    .edge {stroke:#666; stroke-width:1.5}
+    .guide {stroke:#666; stroke-width:1.2; stroke-dasharray:5 4; fill:none}
+    .fill-p {fill:#3f51b5; fill-opacity:0.18} .fill-a {fill:#e65100; fill-opacity:0.18}
+    .shade-p {fill:#3f51b5; fill-opacity:0.07} .shade-a {fill:#e65100; fill-opacity:0.07}
+    .line-t {stroke:#222; stroke-width:2.2; fill:none}
+    .line-p {stroke:#3f51b5; stroke-width:2.4; fill:none}
+    .line-a {stroke:#e65100; stroke-width:2.4; fill:none}
+    .line-m {stroke:#666; stroke-width:1.6; fill:none}
+    .thin-p {stroke:#3f51b5; stroke-width:1.6; fill:none}
+    .thin-a {stroke:#e65100; stroke-width:1.6; fill:none}
+    .dash-p {stroke:#3f51b5; stroke-width:2; stroke-dasharray:6 4; fill:none}
+    .dash-a {stroke:#e65100; stroke-width:2; stroke-dasharray:6 4; fill:none}
+    .dot {fill:#222} .dot-p {fill:#3f51b5} .dot-a {fill:#e65100} .dot-m {fill:#666}
+    .faint {opacity:0.35} .bg {fill:#ffffff}
+</style><defs><marker id="head-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222"/></marker><marker id="head-p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3f51b5"/></marker><marker id="head-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#e65100"/></marker><marker id="head-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#666"/></marker></defs><line x1="60.0" y1="270.0" x2="320.0" y2="270.0" class="axis" marker-end="url(#head-m)" />
+<line x1="70.0" y1="280.0" x2="70.0" y2="40.0" class="axis" marker-end="url(#head-m)" />
+<text x="326.0" y="275.0" font-size="15" text-anchor="start" class="text" font-style="italic">r</text>
+<text x="78.0" y="44.0" font-size="15" text-anchor="start" class="text" font-style="italic">θ</text>
+<circle cx="190.0" cy="164.4" r="28.0" class="fill-p" />
+<circle cx="190.0" cy="164.4" r="28.0" class="thin-p"/>
+<circle cx="190.0" cy="164.4" r="4" class="dot-p" />
+<text x="80.0" y="300.0" font-size="14" text-anchor="start" class="text">inputs (r, θ): a small circle</text>
+<line x1="450.0" y1="270.0" x2="710.0" y2="270.0" class="axis" marker-end="url(#head-m)" />
+<line x1="460.0" y1="280.0" x2="460.0" y2="40.0" class="axis" marker-end="url(#head-m)" />
+<text x="716.0" y="275.0" font-size="15" text-anchor="start" class="text" font-style="italic">x</text>
+<text x="468.0" y="44.0" font-size="15" text-anchor="start" class="text" font-style="italic">y</text>
+<line x1="460.0" y1="270.0" x2="559.0" y2="202.2" class="guide" />
+<ellipse cx="559.0" cy="202.2" rx="28.0" ry="42.0" transform="rotate(-34.4 559.0 202.2)" class="fill-p"/>
+<ellipse cx="559.0" cy="202.2" rx="28.0" ry="42.0" transform="rotate(-34.4 559.0 202.2)" class="thin-p"/>
+<circle cx="559.0" cy="202.2" r="4" class="dot-p" />
+<text x="470.0" y="300.0" font-size="14" text-anchor="start" class="text">outputs (x, y): an ellipse, stretched by r</text>
+<path d="M230,144 C320,74 419,122 511,172" class="line-t" marker-end="url(#head-t)" />
+<text x="374.5" y="70.0" font-size="18" text-anchor="middle" class="text" font-style="italic" font-weight="bold">J</text></svg>

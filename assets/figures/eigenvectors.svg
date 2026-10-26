@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 450" font-family="sans-serif" role="img"><title>Eigenvectors stay on their own line when multiplied by A; other vectors turn</title><style>
+    .text {fill:#222} .muted {fill:#666}
+    .axis {stroke:#666; stroke-width:1.4; fill:none}
+    .edge {stroke:#666; stroke-width:1.5}
+    .guide {stroke:#666; stroke-width:1.2; stroke-dasharray:5 4; fill:none}
+    .fill-p {fill:#3f51b5; fill-opacity:0.18} .fill-a {fill:#e65100; fill-opacity:0.18}
+    .shade-p {fill:#3f51b5; fill-opacity:0.07} .shade-a {fill:#e65100; fill-opacity:0.07}
+    .line-t {stroke:#222; stroke-width:2.2; fill:none}
+    .line-p {stroke:#3f51b5; stroke-width:2.4; fill:none}
+    .line-a {stroke:#e65100; stroke-width:2.4; fill:none}
+    .line-m {stroke:#666; stroke-width:1.6; fill:none}
+    .thin-p {stroke:#3f51b5; stroke-width:1.6; fill:none}
+    .thin-a {stroke:#e65100; stroke-width:1.6; fill:none}
+    .dash-p {stroke:#3f51b5; stroke-width:2; stroke-dasharray:6 4; fill:none}
+    .dash-a {stroke:#e65100; stroke-width:2; stroke-dasharray:6 4; fill:none}
+    .dot {fill:#222} .dot-p {fill:#3f51b5} .dot-a {fill:#e65100} .dot-m {fill:#666}
+    .faint {opacity:0.35} .bg {fill:#ffffff}
+</style><defs><marker id="head-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222"/></marker><marker id="head-p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3f51b5"/></marker><marker id="head-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#e65100"/></marker><marker id="head-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#666"/></marker><clipPath id="eig-clip"><rect x="30" y="30" width="270" height="410"/></clipPath></defs><line x1="30.0" y1="290.0" x2="300.0" y2="290.0" class="axis" />
+<line x1="180.0" y1="440.0" x2="180.0" y2="30.0" class="axis" />
+<line x1="37.0" y1="147.0" x2="323.0" y2="433.0" class="guide" clip-path="url(#eig-clip)"/>
+<line x1="37.0" y1="4.0" x2="323.0" y2="576.0" class="guide" clip-path="url(#eig-clip)"/>
+<line x1="180.0" y1="290.0" x2="235.0" y2="345.0" class="line-m" marker-end="url(#head-m)" />
+<line x1="180.0" y1="290.0" x2="125.0" y2="235.0" class="line-p" marker-end="url(#head-p)" />
+<text x="243.0" y="350.0" font-size="14" text-anchor="start" class="muted" font-style="italic">v₁</text>
+<text x="117.0" y="255.0" font-size="14" text-anchor="end" class="text" font-style="italic">Av₁ = -v₁</text>
+<line x1="180.0" y1="290.0" x2="235.0" y2="400.0" class="line-m" marker-end="url(#head-m)" />
+<line x1="180.0" y1="290.0" x2="70.0" y2="70.0" class="line-p" marker-end="url(#head-p)" />
+<text x="243.0" y="405.0" font-size="14" text-anchor="start" class="muted" font-style="italic">v₂</text>
+<text x="80.0" y="68.0" font-size="14" text-anchor="start" class="text" font-style="italic">Av₂ = -2v₂</text>
+<line x1="180.0" y1="290.0" x2="235.0" y2="290.0" class="line-m" marker-end="url(#head-m)" />
+<line x1="180.0" y1="290.0" x2="180.0" y2="400.0" class="line-a" marker-end="url(#head-a)" />
+<text x="239.0" y="280.0" font-size="14" text-anchor="start" class="muted" font-style="italic">w</text>
+<text x="188.0" y="416.0" font-size="14" text-anchor="start" class="text" font-style="italic">Aw</text>
+<circle cx="180.0" cy="290.0" r="4" class="dot" />
+<text x="320.0" y="68.0" font-size="13" text-anchor="start" class="text" font-style="italic">A =</text>
+<path d="M356,47 L351,47 L351,79 L356,79" class="line-m" stroke-width="1.3"/>
+<text x="366.0" y="60.0" font-size="13" text-anchor="middle" class="text">0</text>
+<text x="394.0" y="60.0" font-size="13" text-anchor="middle" class="text">1</text>
+<text x="366.0" y="77.0" font-size="13" text-anchor="middle" class="text">-2</text>
+<text x="394.0" y="77.0" font-size="13" text-anchor="middle" class="text">-3</text>
+<path d="M404,47 L409,47 L409,79 L404,79" class="line-m" stroke-width="1.3"/>
+<line x1="320.0" y1="120.0" x2="350.0" y2="120.0" class="line-m" marker-end="url(#head-m)" />
+<text x="358.0" y="125.0" font-size="13" text-anchor="start" class="muted">before</text>
+<line x1="320.0" y1="145.0" x2="350.0" y2="145.0" class="line-p" marker-end="url(#head-p)" />
+<text x="358.0" y="150.0" font-size="13" text-anchor="start" class="muted">after: eigenvector</text>
+<line x1="320.0" y1="170.0" x2="350.0" y2="170.0" class="line-a" marker-end="url(#head-a)" />
+<text x="358.0" y="175.0" font-size="13" text-anchor="start" class="muted">after: other vector</text>
+<text x="320.0" y="210.0" font-size="13" text-anchor="start" class="muted">Eigenvectors stay on their</text>
+<text x="320.0" y="228.0" font-size="13" text-anchor="start" class="muted">dashed line, only rescaled</text>
+<text x="320.0" y="246.0" font-size="13" text-anchor="start" class="muted">(here, flipped). w turns.</text></svg>
