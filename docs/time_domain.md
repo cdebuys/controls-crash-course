@@ -112,7 +112,7 @@ velocity. Change $k$ and $b$ at any time, even mid-swing.
   const SAMPLE_EVERY = 20;  // keep every 20th step for the plot (50 Hz)
   const WINDOW = 10.0;      // seconds of history shown on the plot
   const MAX_FRAME_DT = 0.05;  // cap per-frame catch-up, e.g. after a background tab
-  const X_VIEW = 1.6;       // displacement range shown (m)
+  const X_VIEW = 1.6;       // minimum displacement range shown (m); grows to fit larger swings
   // Returns [dx/dt, dv/dt] for state (x, v).
   function deriv(x, v, k, b) {
     return [v, -(b * v + k * x) / M];
@@ -210,15 +210,20 @@ velocity. Change $k$ and $b$ at any time, even mid-swing.
       anim.height = Math.round(anim.clientHeight * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
-    function drawScene(x) {
+    // Displacement range to show: fits every swing still on the plot, never below X_VIEW.
+    function viewRange() {
+      let peak = Math.abs(state.x);
+      for (const p of samples) peak = Math.max(peak, Math.abs(p.y));
+      return Math.max(X_VIEW, 1.1 * peak);
+    }
+    function drawScene(x, range) {
       const w = anim.clientWidth, h = anim.clientHeight;
       const wallX = 16, blockW = 48, blockH = 48;
       const groundY = h - 16;
       const restCenter = w / 2;
-      // Scale so the block stays on screen over x in [-X_VIEW, X_VIEW]; clamp beyond that.
-      const scale = (w / 2 - wallX - blockW) / X_VIEW;
-      const shownX = Math.max(-X_VIEW, Math.min(X_VIEW, x));
-      const blockLeft = restCenter + shownX * scale - blockW / 2;
+      // Scale so the block stays on screen over x in [-range, range].
+      const scale = (w / 2 - wallX - blockW) / range;
+      const blockLeft = restCenter + x * scale - blockW / 2;
       const midY = groundY - blockH / 2;
       ctx.clearRect(0, 0, w, h);
       ctx.lineWidth = 2;
@@ -267,8 +272,11 @@ velocity. Change $k$ and $b$ at any time, even mid-swing.
       lastTs = ts;
       chart.options.scales.x.min = Math.max(0, t - WINDOW);
       chart.options.scales.x.max = Math.max(WINDOW, t);
+      const range = viewRange();
+      chart.options.scales.y.min = -range;
+      chart.options.scales.y.max = range;
       chart.update("none");
-      drawScene(state.x);
+      drawScene(state.x, range);
       requestAnimationFrame(frame);
     }
     kInput.addEventListener("input", readParams);
