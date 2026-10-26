@@ -14,6 +14,8 @@
         <link rel="prev" href="..">
       
       
+        <link rel="next" href="../state_space/">
+      
       
         
       
@@ -23,7 +25,7 @@
     
     
       
-        <title>1. Time Domain and State Space - Controls Crash Course</title>
+        <title>Dynamic Systems - Controls Crash Course</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-time-domain-and-state-space" class="md-skip">
+        <a href="#dynamic-systems" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Time Domain and State Space
+              Dynamic Systems
             
           </span>
         </div>
@@ -284,6 +286,55 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Time Domain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Time Domain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -299,7 +350,7 @@
   <span class="md-ellipsis">
     
   
-    1. Time Domain and State Space
+    Dynamic Systems
   
 
     
@@ -317,7 +368,7 @@
   <span class="md-ellipsis">
     
   
-    1. Time Domain and State Space
+    Dynamic Systems
   
 
     
@@ -343,17 +394,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dynamic systems
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#first-order-systems" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -361,23 +401,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="First-order systems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-a-cart-with-drag" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: a cart with drag
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -392,39 +415,6 @@
   
     <nav class="md-nav" aria-label="Second-order systems">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-mass-spring-damper" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The mass-spring-damper
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#natural-frequency-and-damping-ratio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Natural frequency and damping ratio
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reading-a-step-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reading a step response
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#impulse-response" class="md-nav__link">
@@ -453,159 +443,73 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#state-space" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        State space
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="State space">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#from-one-nth-order-equation-to-n-first-order-equations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        From one \(N\)th-order equation to \(N\) first-order equations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-matrix-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The matrix form
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linearization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linearization
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Linearization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#equilibrium-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Equilibrium points
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-a-pendulum" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: a pendulum
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#discrete-time" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Discrete time
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Discrete time">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#forward-euler" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Forward Euler
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#time-step-stability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Time-step stability
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#better-integrators" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Better integrators
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-reading" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Further reading
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../state_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Space and Linearization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discrete_time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discrete Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -638,17 +542,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dynamic systems
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#first-order-systems" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -656,23 +549,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="First-order systems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-a-cart-with-drag" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: a cart with drag
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -687,39 +563,6 @@
   
     <nav class="md-nav" aria-label="Second-order systems">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-mass-spring-damper" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The mass-spring-damper
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#natural-frequency-and-damping-ratio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Natural frequency and damping ratio
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reading-a-step-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reading a step response
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#impulse-response" class="md-nav__link">
@@ -748,156 +591,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#state-space" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        State space
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="State space">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#from-one-nth-order-equation-to-n-first-order-equations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        From one \(N\)th-order equation to \(N\) first-order equations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-matrix-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The matrix form
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linearization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linearization
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Linearization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#equilibrium-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Equilibrium points
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-a-pendulum" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: a pendulum
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#discrete-time" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Discrete time
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Discrete time">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#forward-euler" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Forward Euler
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#time-step-stability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Time-step stability
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#better-integrators" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Better integrators
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-reading" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Further reading
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -918,122 +611,38 @@
   
 
 
-<h1 id="1-time-domain-and-state-space">1. Time Domain and State Space<a class="headerlink" href="#1-time-domain-and-state-space" title="Permanent link">&para;</a></h1>
-<p>Control theory is about making physical things behave the way you want: a motor that
-holds its speed, a robot joint that reaches its target without overshooting, an arm
-that tracks a path. Before we can control anything, we need to describe how it moves
-on its own. This chapter builds that description in the <strong>time domain</strong>: how a system's
-variables evolve from one instant to the next.</p>
-<p>By the end of the chapter you'll be able to write the equations of motion for simple
-systems, read their behavior from a few parameters, put them in the matrix form that
-every later chapter (and every robotics library) uses, and simulate them in code
-without the simulation blowing up.</p>
-<h2 id="dynamic-systems">Dynamic systems<a class="headerlink" href="#dynamic-systems" title="Permanent link">&para;</a></h2>
-<p>A <strong>dynamic system</strong> is one whose output depends on its history, not just on its
-current input. Push a shopping cart and let go: it keeps rolling. Its speed right now
-depends on every push it has received, minus whatever friction has taken away since.</p>
-<p>We describe dynamic systems with <strong>differential equations</strong>, which relate a quantity
-to its rates of change. Three words come up constantly:</p>
-<ul>
-<li>The <strong>input</strong> <span class="arithmatex">\(u(t)\)</span> is what we can act on: a force, a voltage, a torque.</li>
-<li>The <strong>output</strong> <span class="arithmatex">\(y(t)\)</span> is what we measure or care about: a position, a speed.</li>
-<li>The <strong>state</strong> is the smallest set of variables that, together with future inputs,
-  fully determines the future.</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">For software engineers</p>
-<p>Think of the state as everything you'd need to serialize to pause a simulation and
-resume it later with identical results. The differential equation is the update
-rule that advances it.</p>
-</div>
+<h1 id="dynamic-systems">Dynamic Systems<a class="headerlink" href="#dynamic-systems" title="Permanent link">&para;</a></h1>
+<p>A <strong>dynamic system</strong> is one whose output depends on its history, not just its current
+input. Push a cart and let go: it keeps rolling. We describe these systems with
+differential equations, in terms of an <strong>input</strong> <span class="arithmatex">\(u\)</span> we act on (a force, a torque), an
+<strong>output</strong> <span class="arithmatex">\(y\)</span> we measure, and a <strong>state</strong>: the smallest set of variables that, together
+with future inputs, determines the future. If you'd need to save it to pause and resume a
+simulation, it's state.</p>
 <h2 id="first-order-systems">First-order systems<a class="headerlink" href="#first-order-systems" title="Permanent link">&para;</a></h2>
-<p>The simplest dynamic systems have a single state variable and are described by a
-<strong>first-order</strong> differential equation: one that involves only the first derivative.</p>
-<h3 id="example-a-cart-with-drag">Example: a cart with drag<a class="headerlink" href="#example-a-cart-with-drag" title="Permanent link">&para;</a></h3>
-<p>A cart of mass <span class="arithmatex">\(m\)</span> rolls along a track. You push it with force <span class="arithmatex">\(u\)</span>, and viscous drag
-resists it with a force proportional to its speed, <span class="arithmatex">\(-bv\)</span>. Newton's second law gives</p>
+<p>A cart of mass <span class="arithmatex">\(m\)</span> is pushed with force <span class="arithmatex">\(u\)</span> against viscous drag <span class="arithmatex">\(-bv\)</span>:</p>
 <div class="arithmatex">\[
 m\dot{v} + bv = u
 \]</div>
-<p>Suppose the cart starts at rest and at <span class="arithmatex">\(t = 0\)</span> you start pushing with a constant force
-<span class="arithmatex">\(u_0\)</span>, a <strong>step input</strong>. The solution is</p>
-<div class="arithmatex">\[
-v(t) = \frac{u_0}{b}\left(1 - e^{-t/\tau}\right),
-\qquad
-\tau = \frac{m}{b}
-\]</div>
-<p>Two numbers capture everything about this response:</p>
-<ul>
-<li><strong>Steady-state value</strong> <span class="arithmatex">\(u_0/b\)</span>: where the speed ends up. Drag eventually balances the
-  push.</li>
-<li><strong>Time constant</strong> <span class="arithmatex">\(\tau\)</span> (seconds): how fast it gets there. A heavier cart (larger <span class="arithmatex">\(m\)</span>)
-  responds more slowly; more drag (larger <span class="arithmatex">\(b\)</span>) makes it settle faster, at a lower speed.</li>
-</ul>
-<p>The time constant has a precise meaning:</p>
-<table>
-<thead>
-<tr>
-<th>Time elapsed</th>
-<th>Fraction of final value reached</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(\tau\)</span></td>
-<td>63%</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(2\tau\)</span></td>
-<td>86%</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(3\tau\)</span></td>
-<td>95%</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(4\tau\)</span></td>
-<td>98%</td>
-</tr>
-</tbody>
-</table>
-<p>A useful rule of thumb: a first-order system has effectively finished responding after
-about four time constants. Many things behave this way: a cup of coffee cooling, a
-capacitor charging, a motor spinning up against friction.</p>
+<p>Push with a constant force and the speed rises toward <span class="arithmatex">\(u/b\)</span> along an exponential curve
+with <strong>time constant</strong> <span class="arithmatex">\(\tau = m/b\)</span>. It reaches 63% of its final speed after <span class="arithmatex">\(\tau\)</span>
+seconds and is essentially done after <span class="arithmatex">\(4\tau\)</span>.</p>
 <h2 id="second-order-systems">Second-order systems<a class="headerlink" href="#second-order-systems" title="Permanent link">&para;</a></h2>
-<p>Add a spring to the cart and things get more interesting. The system can now store
-energy in two places, as motion and as spring stretch, and trade it back and forth.
-That trade is what makes oscillation possible.</p>
-<h3 id="the-mass-spring-damper">The mass-spring-damper<a class="headerlink" href="#the-mass-spring-damper" title="Permanent link">&para;</a></h3>
-<p>A block of mass <span class="arithmatex">\(m\)</span> slides on a frictionless surface. A spring with stiffness <span class="arithmatex">\(k\)</span>
-connects it to a wall, a damper (think of a shock absorber) with coefficient <span class="arithmatex">\(b\)</span>
-resists its motion, and we can push on it with a force <span class="arithmatex">\(u\)</span>.</p>
-<p>Let <span class="arithmatex">\(x(t)\)</span> be the block's displacement from its resting position. Three forces act on
-it:</p>
-<ul>
-<li><strong>The spring</strong> pulls it back toward rest with a force proportional to displacement: <span class="arithmatex">\(-kx\)</span>.</li>
-<li><strong>The damper</strong> opposes motion with a force proportional to velocity: <span class="arithmatex">\(-b\dot{x}\)</span>.</li>
-<li><strong>The input</strong> pushes it: <span class="arithmatex">\(u\)</span>.</li>
-</ul>
-<p>Newton's second law, <span class="arithmatex">\(m\ddot{x} = \sum F\)</span>, gives the governing equation:</p>
+<p>Add a spring and the system can store energy in two places, as motion and as spring
+stretch, and trade it back and forth. That's what makes oscillation possible.</p>
+<p>A block of mass <span class="arithmatex">\(m\)</span> is connected to a wall by a spring of stiffness <span class="arithmatex">\(k\)</span> and a damper with
+coefficient <span class="arithmatex">\(b\)</span>. With displacement <span class="arithmatex">\(x\)</span> from rest and an applied force <span class="arithmatex">\(u\)</span>, Newton's second
+law gives</p>
 <div class="arithmatex">\[
 m\ddot{x} + b\dot{x} + kx = u
 \]</div>
-<p>This is a <strong>second-order</strong> equation: it involves <span class="arithmatex">\(\ddot{x}\)</span>. It needs two initial
-conditions, a starting position and a starting velocity, so the system has two state
-variables. The mass-spring-damper is worth understanding deeply. A robot joint driven by
-a motor under feedback control behaves, to a good approximation, exactly like this.</p>
-<h3 id="natural-frequency-and-damping-ratio">Natural frequency and damping ratio<a class="headerlink" href="#natural-frequency-and-damping-ratio" title="Permanent link">&para;</a></h3>
-<p>Dividing through by <span class="arithmatex">\(m\)</span> puts the equation in a standard form that shows up throughout
-control theory:</p>
+<p>Two numbers summarize its behavior:</p>
 <div class="arithmatex">\[
-\ddot{x} + 2\zeta\omega_n\dot{x} + \omega_n^2 x = \frac{u}{m},
-\qquad
 \omega_n = \sqrt{\frac{k}{m}},
 \qquad
 \zeta = \frac{b}{2\sqrt{km}}
 \]</div>
-<p>The <strong>natural frequency</strong> <span class="arithmatex">\(\omega_n\)</span> (rad/s) sets how fast the system wants to
-oscillate. The <strong>damping ratio</strong> <span class="arithmatex">\(\zeta\)</span> (no units) decides how the motion dies out:</p>
+<p>The <strong>natural frequency</strong> <span class="arithmatex">\(\omega_n\)</span> (rad/s) sets how fast it wants to oscillate. The
+<strong>damping ratio</strong> <span class="arithmatex">\(\zeta\)</span> decides how the motion dies out:</p>
 <table>
 <thead>
 <tr>
@@ -1060,71 +669,28 @@ oscillate. The <strong>damping ratio</strong> <span class="arithmatex">\(\zeta\)
 </tr>
 </tbody>
 </table>
-<p>When the system is underdamped, it actually oscillates at the <strong>damped natural
-frequency</strong> <span class="arithmatex">\(\omega_d = \omega_n\sqrt{1 - \zeta^2}\)</span>, a little slower than <span class="arithmatex">\(\omega_n\)</span>.</p>
-<h3 id="reading-a-step-response">Reading a step response<a class="headerlink" href="#reading-a-step-response" title="Permanent link">&para;</a></h3>
-<p>Apply a constant force and an underdamped system rises, overshoots, rings, and settles.
-Engineers summarize that shape with a few standard numbers, and each one maps back to
-<span class="arithmatex">\(\omega_n\)</span> and <span class="arithmatex">\(\zeta\)</span>:</p>
-<ul>
-<li><strong>Rise time</strong> <span class="arithmatex">\(t_r\)</span>, from 10% to 90% of the final value: <span class="arithmatex">\(t_r \approx 1.8/\omega_n\)</span>.
-  Higher natural frequency means a faster system.</li>
-<li><strong>Overshoot</strong> <span class="arithmatex">\(M_p\)</span>, how far it goes past the final value as a fraction of that value:
-  <span class="arithmatex">\(M_p = e^{-\pi\zeta/\sqrt{1-\zeta^2}}\)</span>. Overshoot depends <em>only</em> on the damping ratio.</li>
-<li><strong>Settling time</strong> <span class="arithmatex">\(t_s\)</span>, until it stays within 1% of the final value:
-  <span class="arithmatex">\(t_s \approx 4.6/(\zeta\omega_n)\)</span>. The product <span class="arithmatex">\(\zeta\omega_n\)</span> sets how fast the
-  oscillation's envelope decays.</li>
-</ul>
-<p>The overshoot formula is worth getting a feel for:</p>
-<table>
-<thead>
-<tr>
-<th><span class="arithmatex">\(\zeta\)</span></th>
-<th>0.1</th>
-<th>0.3</th>
-<th>0.5</th>
-<th>0.7</th>
-<th>1.0</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Overshoot</td>
-<td>73%</td>
-<td>37%</td>
-<td>16%</td>
-<td>4.6%</td>
-<td>0%</td>
-</tr>
-</tbody>
-</table>
-<p>These formulas turn vague requirements into numbers. "Rise in under half a second and
-overshoot by no more than 5%" becomes "<span class="arithmatex">\(\omega_n \gtrsim 3.6\)</span> rad/s and
-<span class="arithmatex">\(\zeta \gtrsim 0.7\)</span>." Choosing controller gains to hit targets like these is the
-subject of Chapter 3.</p>
+<p>A robot joint under feedback control behaves much like this system, so it's worth
+building a feel for it.</p>
 <h3 id="impulse-response">Impulse response<a class="headerlink" href="#impulse-response" title="Permanent link">&para;</a></h3>
-<p>A step is a sustained push. An <strong>impulse</strong> is the opposite: a sharp strike, a large
-force over a very short time, like a hammer tap. What matters is the impulse <span class="arithmatex">\(J\)</span>, the
-force integrated over the strike. It changes the block's velocity instantly by
-<span class="arithmatex">\(\Delta v = J/m\)</span> without moving it.</p>
-<p>Starting from rest, an underdamped mass-spring-damper struck with impulse <span class="arithmatex">\(J\)</span> responds
-with</p>
+<p>An <strong>impulse</strong> is a sharp strike, like a hammer tap. It changes the block's velocity
+instantly by <span class="arithmatex">\(\Delta v = J/m\)</span>, where <span class="arithmatex">\(J\)</span> is the impulse. The block then rings at its
+natural frequency inside an envelope that decays at a rate set by <span class="arithmatex">\(\zeta\)</span>.</p>
+<details class="note">
+<summary>The impulse response formula</summary>
+<p>Starting from rest, an underdamped block struck with impulse <span class="arithmatex">\(J\)</span> moves as</p>
 <div class="arithmatex">\[
-x(t) = \frac{J}{m\,\omega_d}\, e^{-\zeta\omega_n t} \sin(\omega_d t)
+x(t) = \frac{J}{m\,\omega_d}\, e^{-\zeta\omega_n t} \sin(\omega_d t),
+\qquad
+\omega_d = \omega_n\sqrt{1 - \zeta^2}
 \]</div>
-<p>a sine wave at <span class="arithmatex">\(\omega_d\)</span> inside a decaying exponential envelope. The impulse response
-is the system's fingerprint: Chapter 2 will show that it encodes everything about how a
-linear system responds to <em>any</em> input.</p>
+</details>
 <h3 id="try-it">Try it<a class="headerlink" href="#try-it" title="Permanent link">&para;</a></h3>
-<p>The block has mass <span class="arithmatex">\(m = 1\text{ kg}\)</span>. Press <strong>Impulse</strong> to strike it. Here
-<span class="arithmatex">\(J = 1.5\text{ N·s}\)</span>, so each strike adds <span class="arithmatex">\(1.5\)</span> m/s to its velocity. Change <span class="arithmatex">\(k\)</span> and
-<span class="arithmatex">\(b\)</span> at any time, even mid-swing, and watch how <span class="arithmatex">\(\zeta\)</span> changes the response.</p>
+<p>The block has mass <span class="arithmatex">\(m = 1\text{ kg}\)</span>, and each press of <strong>Impulse</strong> adds <span class="arithmatex">\(1.5\)</span> m/s to its
+velocity. Change <span class="arithmatex">\(k\)</span> and <span class="arithmatex">\(b\)</span> at any time, even mid-swing.</p>
 <ul>
-<li>Set <span class="arithmatex">\(b = 0\)</span>. The block oscillates forever.</li>
-<li>For <span class="arithmatex">\(k = 10\)</span> N/m, what value of <span class="arithmatex">\(b\)</span> gives critical damping? Check your answer
-  against <span class="arithmatex">\(\zeta = b/(2\sqrt{km})\)</span>.</li>
-<li>With <span class="arithmatex">\(b = 0\)</span>, press Impulse repeatedly in time with the swing. The amplitude grows:
-  this is resonance.</li>
+<li>Set <span class="arithmatex">\(b = 0\)</span>. It oscillates forever.</li>
+<li>For <span class="arithmatex">\(k = 10\)</span> N/m, find the <span class="arithmatex">\(b\)</span> that gives critical damping.</li>
+<li>With <span class="arithmatex">\(b = 0\)</span>, press Impulse in time with the swing. That's resonance.</li>
 </ul>
 <style>
 .msd-widget { border: 1px solid var(--md-default-fg-color--lightest); border-radius: 0.2rem; padding: 0.8rem 1rem; margin: 1em 0; }
@@ -1343,226 +909,6 @@ linear system responds to <em>any</em> input.</p>
   }
 })();
 </script>
-
-<h2 id="state-space">State space<a class="headerlink" href="#state-space" title="Permanent link">&para;</a></h2>
-<p>Solving differential equations by hand works for textbook examples, but a robot arm has
-dozens of coupled equations. We need a uniform representation that a computer can
-handle. That representation is <strong>state space</strong>, and it turns calculus into linear
-algebra.</p>
-<h3 id="from-one-nth-order-equation-to-n-first-order-equations">From one <span class="arithmatex">\(N\)</span>th-order equation to <span class="arithmatex">\(N\)</span> first-order equations<a class="headerlink" href="#from-one-nth-order-equation-to-n-first-order-equations" title="Permanent link">&para;</a></h3>
-<p>The trick is to give every derivative but the highest its own name. For the
-mass-spring-damper, define two state variables:</p>
-<div class="arithmatex">\[
-x_1 = x \quad \text{(position)},
-\qquad
-x_2 = \dot{x} \quad \text{(velocity)}
-\]</div>
-<p>Then the single second-order equation becomes two first-order ones:</p>
-<div class="arithmatex">\[
-\dot{x}_1 = x_2,
-\qquad
-\dot{x}_2 = -\frac{k}{m}x_1 - \frac{b}{m}x_2 + \frac{1}{m}u
-\]</div>
-<p>The first equation is just the definition of velocity. The second is Newton's law,
-solved for acceleration. The same recipe works for any order: an <span class="arithmatex">\(N\)</span>th-order equation
-becomes <span class="arithmatex">\(N\)</span> first-order equations, one per derivative.</p>
-<h3 id="the-matrix-form">The matrix form<a class="headerlink" href="#the-matrix-form" title="Permanent link">&para;</a></h3>
-<p>Stack the state variables into a <strong>state vector</strong> <span class="arithmatex">\(\mathbf{x} = [x_1,\ x_2]^T\)</span> (bold, to
-tell it apart from the displacement <span class="arithmatex">\(x\)</span>) and the equations become one matrix equation:</p>
-<div class="arithmatex">\[
-\dot{\mathbf{x}} = A\mathbf{x} + Bu,
-\qquad
-y = C\mathbf{x} + Du
-\]</div>
-<div class="arithmatex">\[
-A = \begin{bmatrix} 0 &amp; 1 \\ -k/m &amp; -b/m \end{bmatrix},
-\qquad
-B = \begin{bmatrix} 0 \\ 1/m \end{bmatrix},
-\qquad
-C = \begin{bmatrix} 1 &amp; 0 \end{bmatrix},
-\qquad
-D = 0
-\]</div>
-<p>Each matrix has a job:</p>
-<ul>
-<li><span class="arithmatex">\(A\)</span> (the <strong>system matrix</strong>) describes how the state evolves on its own. All of the
-  system's natural behavior, its frequencies and damping, lives in <span class="arithmatex">\(A\)</span>.</li>
-<li><span class="arithmatex">\(B\)</span> (the <strong>input matrix</strong>) describes how inputs push the state.</li>
-<li><span class="arithmatex">\(C\)</span> (the <strong>output matrix</strong>) picks out what we measure. Here it selects the position.</li>
-<li><span class="arithmatex">\(D\)</span> (the <strong>feedthrough matrix</strong>) captures any direct path from input to output. It's
-  zero for most mechanical systems.</li>
-</ul>
-<p>This form scales without changing shape. A 7-joint robot arm linearized around a pose
-has a 14-element state vector (seven angles, seven velocities) and a <span class="arithmatex">\(14 \times 14\)</span> <span class="arithmatex">\(A\)</span>
-matrix, but the equation is still <span class="arithmatex">\(\dot{\mathbf{x}} = A\mathbf{x} + Bu\)</span>.</p>
-<div class="admonition tip">
-<p class="admonition-title">For software engineers</p>
-<p>State space is the representation your code will use. In C++ with Eigen, the
-mass-spring-damper is a few lines:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Eigen/Dense&gt;</span>
-
-<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.0</span><span class="p">;</span>
-<span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2d</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
-<span class="n">A</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">    </span><span class="mf">1.0</span><span class="p">,</span>
-<span class="w">     </span><span class="o">-</span><span class="n">k</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector2d</span><span class="w"> </span><span class="nf">B</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m</span><span class="p">);</span>
-
-<span class="n">Eigen</span><span class="o">::</span><span class="n">Vector2d</span><span class="w"> </span><span class="nf">x</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span><span class="w">  </span><span class="c1">// state: [position, velocity]</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">u</span><span class="p">);</span><span class="w">  </span><span class="c1">// one forward Euler step (see "Discrete time" below)</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Swap in different matrices and the same loop simulates a different system.</p>
-</div>
-<h2 id="linearization">Linearization<a class="headerlink" href="#linearization" title="Permanent link">&para;</a></h2>
-<p>Real systems are rarely linear. Robot arms certainly aren't: gravity's effect on a joint
-depends on the sine of its angle. In general, a system's state evolves according to
-some nonlinear function,</p>
-<div class="arithmatex">\[
-\dot{\mathbf{x}} = f(\mathbf{x}, u)
-\]</div>
-<p>and the matrix form above doesn't directly apply. But zoom in close enough to any smooth
-curve and it looks like a straight line. <strong>Linearization</strong> applies that idea to dynamic
-systems.</p>
-<h3 id="equilibrium-points">Equilibrium points<a class="headerlink" href="#equilibrium-points" title="Permanent link">&para;</a></h3>
-<p>An <strong>equilibrium</strong> is a state <span class="arithmatex">\(\bar{\mathbf{x}}\)</span> and input <span class="arithmatex">\(\bar{u}\)</span> where nothing changes:
-<span class="arithmatex">\(f(\bar{\mathbf{x}}, \bar{u}) = 0\)</span>. Near an equilibrium, write the state as a small
-deviation <span class="arithmatex">\(\delta\mathbf{x} = \mathbf{x} - \bar{\mathbf{x}}\)</span> and the input as
-<span class="arithmatex">\(\delta u = u - \bar{u}\)</span>. A first-order Taylor expansion gives a linear system for the
-deviations:</p>
-<div class="arithmatex">\[
-\delta\dot{\mathbf{x}} \approx A\,\delta\mathbf{x} + B\,\delta u,
-\qquad
-A = \left.\frac{\partial f}{\partial \mathbf{x}}\right|_{\bar{\mathbf{x}}, \bar{u}},
-\qquad
-B = \left.\frac{\partial f}{\partial u}\right|_{\bar{\mathbf{x}}, \bar{u}}
-\]</div>
-<p><span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are matrices of partial derivatives, called <strong>Jacobians</strong>, evaluated at the
-equilibrium. (Jacobians return in Chapter 4, where they relate joint motion to hand
-motion.)</p>
-<h3 id="example-a-pendulum">Example: a pendulum<a class="headerlink" href="#example-a-pendulum" title="Permanent link">&para;</a></h3>
-<p>A rod of length <span class="arithmatex">\(l\)</span> with a mass <span class="arithmatex">\(m\)</span> at its tip swings about a motor-driven pivot. With
-viscous friction <span class="arithmatex">\(b\)</span> at the pivot and motor torque <span class="arithmatex">\(\tau\)</span>, its equation of motion is</p>
-<div class="arithmatex">\[
-ml^2\ddot{\theta} + b\dot{\theta} + mgl\sin\theta = \tau
-\]</div>
-<p>The <span class="arithmatex">\(\sin\theta\)</span> makes it nonlinear. With state <span class="arithmatex">\(\mathbf{x} = [\theta,\ \dot{\theta}]^T\)</span>
-and input <span class="arithmatex">\(u = \tau\)</span>,</p>
-<div class="arithmatex">\[
-f(\mathbf{x}, u) =
-\begin{bmatrix} \dot{\theta} \\ \dfrac{u - b\dot{\theta} - mgl\sin\theta}{ml^2} \end{bmatrix},
-\qquad
-A = \begin{bmatrix} 0 &amp; 1 \\ -\dfrac{g}{l}\cos\bar{\theta} &amp; -\dfrac{b}{ml^2} \end{bmatrix},
-\qquad
-B = \begin{bmatrix} 0 \\ \dfrac{1}{ml^2} \end{bmatrix}
-\]</div>
-<p>With zero torque, the pendulum has two equilibria:</p>
-<ul>
-<li><strong>Hanging down</strong> (<span class="arithmatex">\(\bar{\theta} = 0\)</span>): <span class="arithmatex">\(\cos\bar{\theta} = 1\)</span>, so the bottom-left entry
-  of <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(-g/l\)</span>. Compare with the mass-spring-damper's <span class="arithmatex">\(-k/m\)</span>: gravity acts like a
-  spring pulling the pendulum back, and it swings at <span class="arithmatex">\(\omega_n = \sqrt{g/l}\)</span>.</li>
-<li><strong>Balanced upright</strong> (<span class="arithmatex">\(\bar{\theta} = \pi\)</span>): <span class="arithmatex">\(\cos\bar{\theta} = -1\)</span>, so the entry flips
-  to <span class="arithmatex">\(+g/l\)</span>. That's a "negative spring" that pushes the pendulum <em>away</em> from equilibrium.
-  The slightest disturbance and it falls. Chapter 2 gives the precise test for this kind
-  of instability.</li>
-</ul>
-<p>Linearization is only an approximation, accurate for small deviations. Replacing
-<span class="arithmatex">\(\sin\theta\)</span> with <span class="arithmatex">\(\theta\)</span> is off by about 1% at 14° and about 5% at 30°. That's why
-controllers designed with linear tools work best when they keep the system near its
-operating point, and why a robot controller often re-linearizes as the arm moves.</p>
-<h2 id="discrete-time">Discrete time<a class="headerlink" href="#discrete-time" title="Permanent link">&para;</a></h2>
-<p>So far time has been continuous. Computers aren't: they do things in steps. That
-matters in two places.</p>
-<ul>
-<li><strong>Simulation:</strong> a simulator advances the state by a time step <span class="arithmatex">\(\Delta t\)</span> at a time.</li>
-<li><strong>Control:</strong> a controller reads its sensors, computes a command, and sends it to the
-  motors once per cycle, every <span class="arithmatex">\(T\)</span> seconds. Between updates the command is held constant,
-  which is called a <strong>zero-order hold</strong>.</li>
-</ul>
-<p>Both raise the same question: what happens when you replace smooth time with steps?</p>
-<h3 id="forward-euler">Forward Euler<a class="headerlink" href="#forward-euler" title="Permanent link">&para;</a></h3>
-<p>The simplest way to step a system forward is to assume the derivative stays constant
-over one step:</p>
-<div class="arithmatex">\[
-\mathbf{x}_{k+1} = \mathbf{x}_k + \Delta t\, f(\mathbf{x}_k, u_k)
-\]</div>
-<p>This is the <strong>forward Euler</strong> method, and it's the line inside the loop of the Eigen
-example above. For a linear system it becomes a matrix update:</p>
-<div class="arithmatex">\[
-\mathbf{x}_{k+1} = (I + \Delta t\, A)\,\mathbf{x}_k + \Delta t\, B\, u_k
-\]</div>
-<p>It's simple, and it can fail badly.</p>
-<h3 id="time-step-stability">Time-step stability<a class="headerlink" href="#time-step-stability" title="Permanent link">&para;</a></h3>
-<p>Apply forward Euler to the cart with drag, with no input: <span class="arithmatex">\(\dot{v} = -v/\tau\)</span>. Each step
-multiplies the speed by the same factor:</p>
-<div class="arithmatex">\[
-v_{k+1} = \left(1 - \frac{\Delta t}{\tau}\right) v_k
-\]</div>
-<p>The real cart's speed decays smoothly to zero. The simulated one does something that
-depends on the step size:</p>
-<ul>
-<li><span class="arithmatex">\(\Delta t &lt; \tau\)</span>: the factor is between 0 and 1, so the speed decays. Good.</li>
-<li><span class="arithmatex">\(\tau &lt; \Delta t &lt; 2\tau\)</span>: the factor is negative, so the simulated speed flips sign
-  every step. The simulation oscillates, even though the real system can't.</li>
-<li><span class="arithmatex">\(\Delta t &gt; 2\tau\)</span>: the factor's magnitude exceeds 1, so the simulated speed grows
-  without bound. The simulation is <strong>numerically unstable</strong>.</li>
-</ul>
-<p>Oscillating systems are even less forgiving. For the mass-spring-damper, forward Euler is
-stable only when</p>
-<div class="arithmatex">\[
-\Delta t &lt; \frac{2\zeta}{\omega_n}
-\]</div>
-<p>With no damping (<span class="arithmatex">\(\zeta = 0\)</span>), no time step is small enough: every step adds a little
-energy, and the oscillation grows forever. For the widget's default settings
-(<span class="arithmatex">\(k = 10\)</span> N/m, <span class="arithmatex">\(b = 1\)</span> N·s/m) the limit is <span class="arithmatex">\(\Delta t &lt; 0.1\)</span> s, much less than the
-period of the oscillation.</p>
-<p>The lesson: <strong>the time step must be small compared to the system's fastest time scale</strong>,
-its smallest <span class="arithmatex">\(\tau\)</span> or <span class="arithmatex">\(1/\omega_n\)</span>. Stiff springs and light masses make time scales
-short, which is why physics engines struggle with stiff contacts.</p>
-<h3 id="better-integrators">Better integrators<a class="headerlink" href="#better-integrators" title="Permanent link">&para;</a></h3>
-<p>Forward Euler is rarely the right choice in practice.</p>
-<ul>
-<li><strong>Runge-Kutta 4 (RK4)</strong> evaluates the derivative four times per step and combines
-  the results. It's far more accurate, and it handles undamped oscillators as long as
-  <span class="arithmatex">\(\omega_n \Delta t &lt; 2.8\)</span>. The widget above uses RK4 with <span class="arithmatex">\(\Delta t = 1\)</span> ms, far inside
-  that limit.</li>
-<li><strong>Exact discretization.</strong> For a linear system with a zero-order-hold input, the
-  update can be computed exactly using the matrix exponential, <span class="arithmatex">\(\mathbf{x}_{k+1} =
-  e^{A\Delta t}\mathbf{x}_k + \dots\)</span>. It's exact at any step size, and it's the standard
-  way to convert a continuous-time model for digital control design.</li>
-</ul>
-<p>A controller's update rate raises the same issues, from the other side: a controller
-that samples too slowly can destabilize a system that would be perfectly stable under
-continuous control. Chapter 3 shows how the loop rate limits how aggressive feedback can
-be.</p>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<ul>
-<li>A dynamic system's <strong>state</strong> is the minimal information needed to predict its future.</li>
-<li><strong>First-order</strong> systems are characterized by a time constant <span class="arithmatex">\(\tau\)</span>; they finish
-  responding in about <span class="arithmatex">\(4\tau\)</span>.</li>
-<li><strong>Second-order</strong> systems are characterized by a natural frequency <span class="arithmatex">\(\omega_n\)</span> and a
-  damping ratio <span class="arithmatex">\(\zeta\)</span>. Overshoot depends only on <span class="arithmatex">\(\zeta\)</span>; speed depends on <span class="arithmatex">\(\omega_n\)</span>.</li>
-<li>Any <span class="arithmatex">\(N\)</span>th-order linear system can be written in <strong>state-space</strong> form,
-  <span class="arithmatex">\(\dot{\mathbf{x}} = A\mathbf{x} + Bu\)</span>, the representation robotics software uses.</li>
-<li>Nonlinear systems can be <strong>linearized</strong> around an equilibrium, using Jacobians.</li>
-<li>Simulating or controlling in <strong>discrete time</strong> requires a time step that's small
-  compared to the system's fastest dynamics.</li>
-</ul>
-<h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Franklin, Powell, and Emami-Naeini, <em>Feedback Control of Dynamic Systems</em>, covers
-  dynamic response, step-response specifications, and state space in depth. It writes
-  the state equations as <span class="arithmatex">\(\dot{\mathbf{x}} = F\mathbf{x} + Gu\)</span>, <span class="arithmatex">\(y = H\mathbf{x} + Ju\)</span>;
-  this course uses <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, <span class="arithmatex">\(C\)</span>, <span class="arithmatex">\(D\)</span>.</li>
-<li>Spong, Hutchinson, and Vidyasagar, <em>Robot Modeling and Control</em>, is the main reference
-  for the robotics chapters of this course, and its notation is the one we follow.</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Lab: <code>time_domain</code> (coming soon)</p>
-<p>The C++ lab for this chapter simulates the mass-spring-damper open loop and logs its
-step and impulse responses to Rerun, so you can compare them with the formulas above.</p>
-</div>
 
 
 
