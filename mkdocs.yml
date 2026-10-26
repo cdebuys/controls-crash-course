@@ -20,10 +20,18 @@ theme:
 
 nav:
   - Home: index.md
+  - 0. Math Toolkit:
+      - Complex Numbers: math/complex_numbers.md
+      - Vectors and Matrices: math/vectors_matrices.md
+      - Solving Linear Systems: math/linear_systems.md
+      - Eigenvalues and Eigenvectors: math/eigenvalues.md
+      - Derivatives and Integrals: math/derivatives_integrals.md
+      - Differential Equations: math/differential_equations.md
+      - Partial Derivatives and Jacobians: math/jacobians.md
+      - Quadratic Forms and Optimization: math/optimization.md
   - 1. Time Domain:
       - Dynamic Systems: time_domain.md
-      - State Space and Linearization: state_space.md
-      - Discrete Time: discrete_time.md
+      - State Space, Stability, and Linearization: state_space.md
 
 markdown_extensions:
   - admonition

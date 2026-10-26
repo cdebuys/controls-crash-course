@@ -1,11 +1,10 @@
 # Dynamic Systems
 
 A **dynamic system** is one whose output depends on its history, not just its current
-input. Push a cart and let go: it keeps rolling. We describe these systems with
+input. Push a cart and let go: it keeps rolling. We describe such systems with
 differential equations, in terms of an **input** $u$ we act on (a force, a torque), an
 **output** $y$ we measure, and a **state**: the smallest set of variables that, together
-with future inputs, determines the future. If you'd need to save it to pause and resume a
-simulation, it's state.
+with future inputs, determines the future.
 
 ## First-order systems
 
@@ -15,9 +14,13 @@ $$
 m\dot{v} + bv = u
 $$
 
-Push with a constant force and the speed rises toward $u/b$ along an exponential curve
-with **time constant** $\tau = m/b$. It reaches 63% of its final speed after $\tau$
-seconds and is essentially done after $4\tau$.
+!!! info "Refresher"
+    $\dot{x} = ax$ has the solution $x(0)e^{at}$, which decays when $a < 0$.
+    See [Differential Equations](math/differential_equations.md).
+
+With no push, the speed decays as $e^{-t/\tau}$, where $\tau = m/b$ is the **time
+constant**. With a constant push, the speed rises toward $u/b$ along the same curve: it
+covers 63% of the way after $\tau$ seconds and is essentially there after $4\tau$.
 
 ## Second-order systems
 
@@ -25,53 +28,62 @@ Add a spring and the system can store energy in two places, as motion and as spr
 stretch, and trade it back and forth. That's what makes oscillation possible.
 
 A block of mass $m$ is connected to a wall by a spring of stiffness $k$ and a damper with
-coefficient $b$. With displacement $x$ from rest and an applied force $u$, Newton's second
-law gives
+coefficient $b$. The spring pulls back with force $-kx$, the damper resists motion with
+$-b\dot{x}$, and we push with $u$. Newton's second law gives
 
 $$
 m\ddot{x} + b\dot{x} + kx = u
 $$
 
-Two numbers summarize its behavior:
+You solved this equation in [Differential Equations](math/differential_equations.md).
+Its characteristic roots are clearest when written with two new quantities:
 
 $$
+s = -\zeta\omega_n \pm \omega_n\sqrt{\zeta^2 - 1},
+\qquad
 \omega_n = \sqrt{\frac{k}{m}},
 \qquad
 \zeta = \frac{b}{2\sqrt{km}}
 $$
 
-The **natural frequency** $\omega_n$ (rad/s) sets how fast it wants to oscillate. The
-**damping ratio** $\zeta$ decides how the motion dies out:
+The **natural frequency** $\omega_n$ (rad/s) sets how fast the system moves. The **damping
+ratio** $\zeta$ decides what kind of roots it has, and so how the motion dies out:
 
-| Damping ratio | Behavior |
-|---|---|
-| $\zeta = 0$ | **Undamped:** oscillates forever. |
-| $0 < \zeta < 1$ | **Underdamped:** oscillates with a decaying envelope. |
-| $\zeta = 1$ | **Critically damped:** fastest return to rest without overshooting. |
-| $\zeta > 1$ | **Overdamped:** creeps back to rest without oscillating. |
+| Damping ratio | Roots | Behavior |
+|---|---|---|
+| $\zeta = 0$ | $\pm j\omega_n$ | **Undamped:** oscillates forever. |
+| $0 < \zeta < 1$ | complex pair, $-\zeta\omega_n \pm j\omega_d$ | **Underdamped:** oscillates with a decaying envelope. |
+| $\zeta = 1$ | one repeated real root | **Critically damped:** fastest return to rest without overshooting. |
+| $\zeta > 1$ | two negative real roots | **Overdamped:** creeps back to rest without oscillating. |
+
+Here $\omega_d = \omega_n\sqrt{1 - \zeta^2}$ is the frequency it actually oscillates at.
+
+!!! info "Refresher"
+    A complex pair $\sigma \pm j\omega$ gives a solution $e^{\sigma t}\cos\omega t$: an
+    oscillation at $\omega$ inside an envelope that decays when $\sigma < 0$.
+    See [Complex Numbers](math/complex_numbers.md).
 
 A robot joint under feedback control behaves much like this system, so it's worth
 building a feel for it.
 
 ### Impulse response
 
-An **impulse** is a sharp strike, like a hammer tap. It changes the block's velocity
-instantly by $\Delta v = J/m$, where $J$ is the impulse. The block then rings at its
-natural frequency inside an envelope that decays at a rate set by $\zeta$.
+An **impulse** is a sharp strike, like a hammer tap. Its size $J$ is the force integrated
+over the strike, and it changes the block's velocity instantly by $\Delta v = J/m$. The
+block then rings at $\omega_d$ inside an envelope that decays at rate $\zeta\omega_n$.
 
 ??? note "The impulse response formula"
     Starting from rest, an underdamped block struck with impulse $J$ moves as
 
     $$
-    x(t) = \frac{J}{m\,\omega_d}\, e^{-\zeta\omega_n t} \sin(\omega_d t),
-    \qquad
-    \omega_d = \omega_n\sqrt{1 - \zeta^2}
+    x(t) = \frac{J}{m\,\omega_d}\, e^{-\zeta\omega_n t} \sin(\omega_d t)
     $$
 
 ### Try it
 
 The block has mass $m = 1\text{ kg}$, and each press of **Impulse** adds $1.5$ m/s to its
-velocity. Change $k$ and $b$ at any time, even mid-swing.
+velocity. Change $k$ and $b$ at any time, even mid-swing. (The widget solves the equation
+numerically; Chapter 5 explains how simulators do this.)
 
 - Set $b = 0$. It oscillates forever.
 - For $k = 10$ N/m, find the $b$ that gives critical damping.
