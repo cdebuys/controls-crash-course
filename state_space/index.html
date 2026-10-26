@@ -14,8 +14,6 @@
         <link rel="prev" href="../time_domain/">
       
       
-        <link rel="next" href="../discrete_time/">
-      
       
         
       
@@ -25,7 +23,7 @@
     
     
       
-        <title>State Space and Linearization - Controls Crash Course</title>
+        <title>State Space, Stability, and Linearization - Controls Crash Course</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#state-space-and-linearization" class="md-skip">
+        <a href="#state-space-stability-and-linearization" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              State Space and Linearization
+              State Space, Stability, and Linearization
             
           </span>
         </div>
@@ -282,6 +280,284 @@
       
   
   
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Math Toolkit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    0. Math Toolkit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/complex_numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/vectors_matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vectors and Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/linear_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solving Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/eigenvalues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/derivatives_integrals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Derivatives and Integrals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/differential_equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Differential Equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/jacobians/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partial Derivatives and Jacobians
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadratic Forms and Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -295,10 +571,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -316,8 +592,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -378,7 +654,7 @@
   <span class="md-ellipsis">
     
   
-    State Space and Linearization
+    State Space, Stability, and Linearization
   
 
     
@@ -396,7 +672,7 @@
   <span class="md-ellipsis">
     
   
-    State Space and Linearization
+    State Space, Stability, and Linearization
   
 
     
@@ -444,6 +720,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linearization" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -454,38 +741,21 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Further reading
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../discrete_time/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Discrete Time
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -547,10 +817,32 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linearization" class="md-nav__link">
     <span class="md-ellipsis">
       
         Linearization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Further reading
       
     </span>
   </a>
@@ -577,14 +869,12 @@
   
 
 
-<h1 id="state-space-and-linearization">State Space and Linearization<a class="headerlink" href="#state-space-and-linearization" title="Permanent link">&para;</a></h1>
-<p>A robot arm has dozens of coupled equations of motion, so we need one uniform form that a
-computer can handle. <strong>State space</strong> is that form, and it turns calculus into linear
-algebra.</p>
+<h1 id="state-space-stability-and-linearization">State Space, Stability, and Linearization<a class="headerlink" href="#state-space-stability-and-linearization" title="Permanent link">&para;</a></h1>
+<p>A robot arm has dozens of coupled equations of motion, so we need one uniform form that
+software can handle. That form is <strong>state space</strong>.</p>
 <h2 id="from-one-equation-to-many">From one equation to many<a class="headerlink" href="#from-one-equation-to-many" title="Permanent link">&para;</a></h2>
 <p>Give every derivative except the highest its own name. For the mass-spring-damper, let
-<span class="arithmatex">\(x_1 = x\)</span> (position) and <span class="arithmatex">\(x_2 = \dot{x}\)</span> (velocity). The second-order equation becomes two
-first-order ones:</p>
+<span class="arithmatex">\(x_1 = x\)</span> (position) and <span class="arithmatex">\(x_2 = \dot{x}\)</span> (velocity):</p>
 <div class="arithmatex">\[
 \dot{x}_1 = x_2,
 \qquad
@@ -592,6 +882,11 @@ first-order ones:</p>
 \]</div>
 <p>An <span class="arithmatex">\(N\)</span>th-order equation always becomes <span class="arithmatex">\(N\)</span> first-order equations this way.</p>
 <h2 id="the-matrix-form">The matrix form<a class="headerlink" href="#the-matrix-form" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Refresher</p>
+<p>A matrix times a vector takes the dot product of each row with the vector.
+See <a href="../math/vectors_matrices/">Vectors and Matrices</a>.</p>
+</div>
 <p>Stack the states into a vector <span class="arithmatex">\(\mathbf{x} = [x_1,\ x_2]^T\)</span> (bold, to tell it apart from
 the displacement <span class="arithmatex">\(x\)</span>):</p>
 <div class="arithmatex">\[
@@ -609,32 +904,51 @@ C = \begin{bmatrix} 1 &amp; 0 \end{bmatrix},
 D = 0
 \]</div>
 <ul>
-<li><span class="arithmatex">\(A\)</span> holds the system's own dynamics. Its frequencies and damping live here.</li>
+<li><span class="arithmatex">\(A\)</span> holds the system's own dynamics.</li>
 <li><span class="arithmatex">\(B\)</span> says how the input pushes the state.</li>
 <li><span class="arithmatex">\(C\)</span> picks out the measured output, here the position. <span class="arithmatex">\(D\)</span> is a direct path from input
   to output, usually zero.</li>
 </ul>
-<p>A 7-joint robot arm needs bigger matrices, but the equation keeps the same shape. In C++
-with Eigen:</p>
+<p>A 7-joint arm needs bigger matrices, but the equation keeps the same shape.</p>
+<h2 id="stability">Stability<a class="headerlink" href="#stability" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Refresher</p>
+<p>The solution of <span class="arithmatex">\(\dot{\mathbf{x}} = A\mathbf{x}\)</span> is a sum of modes <span class="arithmatex">\(e^{\lambda t}\mathbf{v}\)</span>, one
+per eigenvalue of <span class="arithmatex">\(A\)</span>. See <a href="../math/differential_equations/">Differential Equations</a>.</p>
+</div>
+<p>The eigenvalues of the mass-spring-damper's <span class="arithmatex">\(A\)</span> are the roots of</p>
+<div class="arithmatex">\[
+\det(sI - A) = s^2 + \frac{b}{m}s + \frac{k}{m} = 0
+\]</div>
+<p>which is the characteristic equation from the previous page, divided by <span class="arithmatex">\(m\)</span>. So the
+eigenvalues of <span class="arithmatex">\(A\)</span> <em>are</em> the characteristic roots, and they decide how the system behaves:</p>
+<ul>
+<li>Every eigenvalue has a negative real part: the system returns to rest. It's
+  <strong>stable</strong>.</li>
+<li>Any eigenvalue has a positive real part: some motion grows without bound. It's
+  <strong>unstable</strong>.</li>
+<li>Eigenvalues on the imaginary axis, with none to the right: it oscillates forever
+  without growing or decaying, like the undamped spring.</li>
+</ul>
+<p>In code, that's one call:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Eigen/Dense&gt;</span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.0</span><span class="p">;</span>
 <span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2d</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
 <span class="n">A</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">    </span><span class="mf">1.0</span><span class="p">,</span>
 <span class="w">     </span><span class="o">-</span><span class="n">k</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector2d</span><span class="w"> </span><span class="nf">B</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m</span><span class="p">);</span>
-
-<span class="n">Eigen</span><span class="o">::</span><span class="n">Vector2d</span><span class="w"> </span><span class="nf">x</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span><span class="w">  </span><span class="c1">// state: [position, velocity]</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">u</span><span class="p">);</span><span class="w">  </span><span class="c1">// one forward Euler step (see Discrete Time)</span>
-<span class="p">}</span>
+<span class="n">Eigen</span><span class="o">::</span><span class="n">EigenSolver</span><span class="o">&lt;</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2d</span><span class="o">&gt;</span><span class="w"> </span><span class="n">solver</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="c1">// solver.eigenvalues() = -0.5 ± 3.12j: negative real parts, so stable</span>
 </code></pre></div>
 <h2 id="linearization">Linearization<a class="headerlink" href="#linearization" title="Permanent link">&para;</a></h2>
-<p>Real systems are nonlinear: <span class="arithmatex">\(\dot{\mathbf{x}} = f(\mathbf{x}, u)\)</span>. But near an
-<strong>equilibrium</strong>, a state where <span class="arithmatex">\(f = 0\)</span> and nothing changes, they behave almost linearly.
-The <span class="arithmatex">\(A\)</span> matrix is then <span class="arithmatex">\(\partial f / \partial \mathbf{x}\)</span> evaluated at the equilibrium, a
-matrix of partial derivatives called a <strong>Jacobian</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Refresher</p>
+<p>Near a point, <span class="arithmatex">\(\mathbf{f}(\bar{\mathbf{x}} + \delta\mathbf{x}) \approx \mathbf{f}(\bar{\mathbf{x}}) + J\,\delta\mathbf{x}\)</span>,
+where <span class="arithmatex">\(J\)</span> is the Jacobian. See <a href="../math/jacobians/">Partial Derivatives and Jacobians</a>.</p>
+</div>
+<p>Real systems are nonlinear: <span class="arithmatex">\(\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}, u)\)</span>. Near an
+<strong>equilibrium</strong>, a state where <span class="arithmatex">\(\mathbf{f} = 0\)</span> and nothing changes, they behave almost
+linearly, with <span class="arithmatex">\(A\)</span> equal to the Jacobian <span class="arithmatex">\(\partial\mathbf{f}/\partial\mathbf{x}\)</span> there.</p>
 <p>A pendulum of length <span class="arithmatex">\(l\)</span> with mass <span class="arithmatex">\(m\)</span> at its tip, pivot friction <span class="arithmatex">\(b\)</span>, and motor torque
 <span class="arithmatex">\(\tau\)</span> follows</p>
 <div class="arithmatex">\[
@@ -646,12 +960,26 @@ A = \begin{bmatrix} 0 &amp; 1 \\ -\dfrac{g}{l}\cos\bar{\theta} &amp; -\dfrac{b}{
 \]</div>
 <ul>
 <li><strong>Hanging down</strong> (<span class="arithmatex">\(\bar{\theta} = 0\)</span>): the bottom-left entry is <span class="arithmatex">\(-g/l\)</span>, just like the
-  spring's <span class="arithmatex">\(-k/m\)</span>. Gravity acts as a spring.</li>
-<li><strong>Balanced upright</strong> (<span class="arithmatex">\(\bar{\theta} = \pi\)</span>): it flips to <span class="arithmatex">\(+g/l\)</span>, a "negative spring"
-  that pushes the pendulum away. It falls. Chapter 2 shows how to test for this.</li>
+  spring's <span class="arithmatex">\(-k/m\)</span>. Gravity acts as a spring, the eigenvalues have negative real parts, and
+  the pendulum is stable.</li>
+<li><strong>Balanced upright</strong> (<span class="arithmatex">\(\bar{\theta} = \pi\)</span>): the entry flips to <span class="arithmatex">\(+g/l\)</span>. The
+  characteristic equation becomes <span class="arithmatex">\(s^2 + \frac{b}{ml^2}s - \frac{g}{l} = 0\)</span>, which always has
+  one positive real root. The pendulum is unstable: it falls.</li>
 </ul>
 <p>The approximation only holds near the equilibrium, which is why controllers built on it
 work best when they keep the system close to its operating point.</p>
+<h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Franklin, Powell, and Emami-Naeini, <em>Feedback Control of Dynamic Systems</em>. It writes
+  state space as <span class="arithmatex">\(F, G, H, J\)</span> where we use <span class="arithmatex">\(A, B, C, D\)</span>.</li>
+<li>Spong, Hutchinson, and Vidyasagar, <em>Robot Modeling and Control</em>, whose notation this
+  course follows.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Lab: <code>time_domain</code> (coming soon)</p>
+<p>The C++ lab simulates the mass-spring-damper open loop and logs its step and impulse
+responses to Rerun.</p>
+</div>
 
 
 
