@@ -86,19 +86,30 @@ can't be recovered, and $A$ has no inverse. Such a matrix is **singular**.
 
 For example, in $\begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}$ the second column is twice
 the first. Its determinant is $1 \cdot 4 - 2 \cdot 2 = 0$, its rank is 1, and
-$[2,\ -1]^T$ is in its null space.
+$[2,\ -1]^T$ is in its null space. The figure shows the unit square mapped by an invertible
+matrix and by this singular one. The middle panel's matrix has determinant 2.5, so it scales
+the square's area by 2.5.
+
+![The unit square mapped by an invertible matrix, and flattened onto a line by a singular one](../assets/figures/determinant_area.svg#only-light)
+![The unit square mapped by an invertible matrix, and flattened onto a line by a singular one](../assets/figures/determinant_area_dark.svg#only-dark)
 
 ## The pseudo-inverse
 
 When $A$ isn't square, or is singular, the **pseudo-inverse** $A^+$ still gives the best
-available answer, $\mathbf{x} = A^+\mathbf{b}$. In terms of the figure:
+available answer, $\mathbf{x} = A^+\mathbf{b}$. In terms of the four subspaces:
 
 - **If $\mathbf{b}$ isn't in the column space**, there's no exact solution. $A^+$ solves for
-  the closest point that is, which makes $|A\mathbf{x} - \mathbf{b}|$ as small as possible.
+  the closest point in the column space, where the error to $\mathbf{b}$ is perpendicular, as
+  in the figure below. That makes $|A\mathbf{x} - \mathbf{b}|$ as small as possible.
   This is the **least-squares** solution. For a tall, full-rank $A$,
   $A^+ = (A^TA)^{-1}A^T$.
 - **If the null space isn't just zero**, there are infinitely many solutions. $A^+$ picks
   the one with no null-space part, which lies entirely in the row space and has the
   smallest $|\mathbf{x}|$. For a wide, full-rank $A$, $A^+ = A^T(AA^T)^{-1}$.
+
+The first case, least squares, looks like this:
+
+![Least squares: the closest point to b in the column space, with the error perpendicular](../assets/figures/least_squares_projection.svg#only-light)
+![Least squares: the closest point to b in the column space, with the error perpendicular](../assets/figures/least_squares_projection_dark.svg#only-dark)
 
 In Eigen: `A.completeOrthogonalDecomposition().pseudoInverse()`.

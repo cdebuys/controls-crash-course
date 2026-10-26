@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" font-family="sans-serif" role="img"><title>A pendulum hanging down (stable) and balanced upright (unstable)</title><style>
+    .text {fill:#222} .muted {fill:#666}
+    .axis {stroke:#666; stroke-width:1.4; fill:none}
+    .edge {stroke:#666; stroke-width:1.5}
+    .guide {stroke:#666; stroke-width:1.2; stroke-dasharray:5 4; fill:none}
+    .fill-p {fill:#3f51b5; fill-opacity:0.18} .fill-a {fill:#e65100; fill-opacity:0.18}
+    .shade-p {fill:#3f51b5; fill-opacity:0.07} .shade-a {fill:#e65100; fill-opacity:0.07}
+    .line-t {stroke:#222; stroke-width:2.2; fill:none}
+    .line-p {stroke:#3f51b5; stroke-width:2.4; fill:none}
+    .line-a {stroke:#e65100; stroke-width:2.4; fill:none}
+    .line-m {stroke:#666; stroke-width:1.6; fill:none}
+    .thin-p {stroke:#3f51b5; stroke-width:1.6; fill:none}
+    .thin-a {stroke:#e65100; stroke-width:1.6; fill:none}
+    .dash-p {stroke:#3f51b5; stroke-width:2; stroke-dasharray:6 4; fill:none}
+    .dash-a {stroke:#e65100; stroke-width:2; stroke-dasharray:6 4; fill:none}
+    .dot {fill:#222} .dot-p {fill:#3f51b5} .dot-a {fill:#e65100} .dot-m {fill:#666}
+    .faint {opacity:0.35} .bg {fill:#ffffff}
+</style><defs><marker id="head-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222"/></marker><marker id="head-p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3f51b5"/></marker><marker id="head-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#e65100"/></marker><marker id="head-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#666"/></marker></defs><line x1="110.0" y1="52.0" x2="170.0" y2="52.0" class="line-m" stroke-width="2"/>
+<line x1="112.0" y1="52.0" x2="120.0" y2="44.0" class="line-m" stroke-width="1.2"/>
+<line x1="122.0" y1="52.0" x2="130.0" y2="44.0" class="line-m" stroke-width="1.2"/>
+<line x1="132.0" y1="52.0" x2="140.0" y2="44.0" class="line-m" stroke-width="1.2"/>
+<line x1="142.0" y1="52.0" x2="150.0" y2="44.0" class="line-m" stroke-width="1.2"/>
+<line x1="152.0" y1="52.0" x2="160.0" y2="44.0" class="line-m" stroke-width="1.2"/>
+<line x1="162.0" y1="52.0" x2="170.0" y2="44.0" class="line-m" stroke-width="1.2"/>
+<line x1="140.0" y1="60.0" x2="140.0" y2="220.0" class="guide" />
+<line x1="140.0" y1="60.0" x2="196.2" y2="199.1" class="line-t" />
+<path d="M140,106 A46,46 0 0 0 157.2,102.7" class="line-m" />
+<circle cx="196.2" cy="199.1" r="13" class="dot-p" />
+<text x="214.2" y="204.1" font-size="15" text-anchor="start" class="text" font-style="italic">m</text>
+<line x1="196.2" y1="213.1" x2="196.2" y2="253.1" class="line-a" marker-end="url(#head-a)" />
+<text x="204.2" y="249.1" font-size="14" text-anchor="start" class="text" font-style="italic">mg</text>
+<text x="156.1" y="129.5" font-size="15" text-anchor="end" class="text" font-style="italic">l</text>
+<circle cx="140.0" cy="60.0" r="4.5" class="dot" />
+<path d="M118.3,56.2 A22,22 0 0 0 134.3,81.3" class="line-a" marker-end="url(#head-a)" />
+<text x="110.0" y="82.0" font-size="15" text-anchor="end" class="text" font-style="italic">τ</text>
+<text x="140.0" y="296.0" font-size="14" text-anchor="middle" class="text" font-weight="bold">hanging: θ = 0</text>
+<text x="140.0" y="314.0" font-size="13" text-anchor="middle" class="muted">gravity pulls it back: stable</text>
+<line x1="390.0" y1="228.0" x2="450.0" y2="228.0" class="line-m" stroke-width="2"/>
+<line x1="392.0" y1="228.0" x2="400.0" y2="236.0" class="line-m" stroke-width="1.2"/>
+<line x1="402.0" y1="228.0" x2="410.0" y2="236.0" class="line-m" stroke-width="1.2"/>
+<line x1="412.0" y1="228.0" x2="420.0" y2="236.0" class="line-m" stroke-width="1.2"/>
+<line x1="422.0" y1="228.0" x2="430.0" y2="236.0" class="line-m" stroke-width="1.2"/>
+<line x1="432.0" y1="228.0" x2="440.0" y2="236.0" class="line-m" stroke-width="1.2"/>
+<line x1="442.0" y1="228.0" x2="450.0" y2="236.0" class="line-m" stroke-width="1.2"/>
+<line x1="420.0" y1="220.0" x2="420.0" y2="60.0" class="guide" />
+<line x1="420.0" y1="220.0" x2="466.4" y2="77.3" class="line-t" />
+<path d="M420,174 A46,46 0 0 1 434.2,176.3" class="line-m" />
+<circle cx="466.4" cy="77.3" r="13" class="dot-p" />
+<text x="484.4" y="82.3" font-size="15" text-anchor="start" class="text" font-style="italic">m</text>
+<line x1="466.4" y1="91.3" x2="466.4" y2="131.3" class="line-a" marker-end="url(#head-a)" />
+<text x="474.4" y="127.3" font-size="14" text-anchor="start" class="text" font-style="italic">mg</text>
+<text x="431.2" y="148.7" font-size="15" text-anchor="end" class="text" font-style="italic">l</text>
+<circle cx="420.0" cy="220.0" r="4.5" class="dot" />
+<path d="M416.2,198.3 A22,22 0 0 0 398.1,221.9" class="line-a" marker-end="url(#head-a)" />
+<text x="390.0" y="208.0" font-size="15" text-anchor="end" class="text" font-style="italic">τ</text>
+<text x="420.0" y="296.0" font-size="14" text-anchor="middle" class="text" font-weight="bold">upright: θ = π</text>
+<text x="420.0" y="314.0" font-size="13" text-anchor="middle" class="muted">gravity pulls it away: unstable</text>
+<text x="170.0" y="126.0" font-size="15" text-anchor="start" class="text" font-style="italic">θ</text></svg>

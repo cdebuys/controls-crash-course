@@ -19,15 +19,22 @@ $$
     See [Differential Equations](math/differential_equations.md).
 
 With no push, the speed decays as $e^{-t/\tau}$, where $\tau = m/b$ is the **time
-constant**. With a constant push, the speed rises toward $u/b$ along the same curve: it
-covers 63% of the way after $\tau$ seconds and is essentially there after $4\tau$.
+constant**. With a constant push, the speed rises toward $u/b$ along the curve in the
+figure. It covers 63% of the way after one time constant and is essentially done after
+four.
+
+![First-order step response with the time constant marked at 63 percent](assets/figures/first_order_step.svg#only-light)
+![First-order step response with the time constant marked at 63 percent](assets/figures/first_order_step_dark.svg#only-dark)
 
 ## Second-order systems
 
 Add a spring and the system can store energy in two places, as motion and as spring
 stretch, and trade it back and forth. That's what makes oscillation possible.
 
-A block of mass $m$ is connected to a wall by a spring of stiffness $k$ and a damper with
+![A mass-spring-damper: a block tied to a wall by a spring and a damper](assets/figures/mass_spring_damper.svg#only-light)
+![A mass-spring-damper: a block tied to a wall by a spring and a damper](assets/figures/mass_spring_damper_dark.svg#only-dark)
+
+In the figure, a block of mass $m$ is connected to a wall by a spring of stiffness $k$ and a damper with
 coefficient $b$. The spring pulls back with force $-kx$, the damper resists motion with
 $-b\dot{x}$, and we push with $u$. Newton's second law gives
 
@@ -56,7 +63,11 @@ ratio** $\zeta$ decides what kind of roots it has, and so how the motion dies ou
 | $\zeta = 1$ | one repeated real root | **Critically damped:** fastest return to rest without overshooting. |
 | $\zeta > 1$ | two negative real roots | **Overdamped:** creeps back to rest without oscillating. |
 
-Here $\omega_d = \omega_n\sqrt{1 - \zeta^2}$ is the frequency it actually oscillates at.
+Here $\omega_d = \omega_n\sqrt{1 - \zeta^2}$ is the frequency it actually oscillates at. The
+figure shows the roots moving as $\zeta$ increases, with $\omega_n$ fixed:
+
+![Roots of the mass-spring-damper as the damping ratio increases](assets/figures/roots_vs_zeta.svg#only-light)
+![Roots of the mass-spring-damper as the damping ratio increases](assets/figures/roots_vs_zeta_dark.svg#only-dark)
 
 !!! info "Refresher"
     A complex pair $\sigma \pm j\omega$ gives a solution $e^{\sigma t}\cos\omega t$: an

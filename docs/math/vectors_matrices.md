@@ -22,6 +22,13 @@ $$
 \begin{bmatrix} a_2 b_3 - a_3 b_2 \\ a_3 b_1 - a_1 b_3 \\ a_1 b_2 - a_2 b_1 \end{bmatrix}
 $$
 
+![The dot product as an angle and projection, and the cross product perpendicular to both vectors](../assets/figures/dot_cross_products.svg#only-light)
+![The dot product as an angle and projection, and the cross product perpendicular to both vectors](../assets/figures/dot_cross_products_dark.svg#only-dark)
+
+On the left, the dot product measures how much of $\mathbf{b}$ lies along $\mathbf{a}$. On the
+right, the cross product points straight out of the plane of $\mathbf{a}$ and $\mathbf{b}$, and
+its length is the shaded area.
+
 ## Matrices
 
 A **matrix** is a grid of numbers. An $m \times n$ matrix has $m$ rows and $n$ columns.

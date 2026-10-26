@@ -100,6 +100,12 @@ $$
 ml^2\ddot{\theta} + b\dot{\theta} + mgl\sin\theta = \tau
 $$
 
+![A pendulum hanging down, which is stable, and balanced upright, which is unstable](assets/figures/pendulum.svg#only-light)
+![A pendulum hanging down, which is stable, and balanced upright, which is unstable](assets/figures/pendulum_dark.svg#only-dark)
+
+The figure shows both equilibria: hanging down, where gravity pulls it back, and balanced
+upright, where gravity pulls it away.
+
 Linearizing around an angle $\bar{\theta}$ gives
 
 $$

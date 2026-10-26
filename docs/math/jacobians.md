@@ -22,8 +22,14 @@ $$
 f(\bar{x} + \delta x) \approx f(\bar{x}) + f'(\bar{x})\,\delta x
 $$
 
-For example, $\sin\theta \approx \theta$ near $\theta = 0$. With several variables, each
-one contributes its own partial derivative times its own small change.
+For example, $\sin\theta \approx \theta$ near $\theta = 0$:
+
+![sin theta and its tangent line theta agree near zero](../assets/figures/linear_approximation.svg#only-light)
+![sin theta and its tangent line theta agree near zero](../assets/figures/linear_approximation_dark.svg#only-dark)
+
+The dashed tangent line and the curve are almost identical inside the shaded band, and
+drift apart outside it. With several variables, each one contributes its own partial derivative times its own
+small change.
 
 ## The Jacobian
 
@@ -49,6 +55,13 @@ J = \begin{bmatrix} \cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta \end{b
 \det J = r
 $$
 
-At $r = 0$ the determinant is zero, so $J$ is singular: changing $\theta$ does nothing to
-the position. A robot arm's Jacobian works the same way, and Chapter 4 is about exactly
+A small circle of input changes around a point maps to an ellipse of position changes.
+It's stretched by $r$ in the $\theta$ direction, because turning by $\theta$ moves the point
+along an arc of radius $r$:
+
+![A small circle of inputs maps through the Jacobian to an ellipse of outputs](../assets/figures/jacobian_ellipse.svg#only-light)
+![A small circle of inputs maps through the Jacobian to an ellipse of outputs](../assets/figures/jacobian_ellipse_dark.svg#only-dark)
+
+At $r = 0$ the determinant is zero, so $J$ is singular: the ellipse collapses to a line,
+and changing $\theta$ does nothing to the position. A robot arm's Jacobian works the same way, and Chapter 4 is about exactly
 these situations.

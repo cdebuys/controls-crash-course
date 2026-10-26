@@ -26,6 +26,13 @@ $$
 \angle z = \operatorname{atan2}(b, a)
 $$
 
+![A complex number as a point with magnitude and angle, and its conjugate](../assets/figures/complex_polar.svg#only-light)
+![A complex number as a point with magnitude and angle, and its conjugate](../assets/figures/complex_polar_dark.svg#only-dark)
+
+In the figure, $a$ and $b$ are the point's coordinates, $|z|$ is its distance from the
+origin, and the angle is measured from the real axis. The conjugate is the mirror image
+across the real axis.
+
 ## Euler's formula
 
 $$
@@ -51,14 +58,14 @@ $$
 e^{st} + e^{\bar{s}t} = 2e^{\sigma t}\cos\omega t
 $$
 
-| | $\omega = 0$ | $\omega \neq 0$ |
-|---|---|---|
-| $\sigma < 0$ | decays | decaying oscillation |
-| $\sigma = 0$ | constant | steady oscillation |
-| $\sigma > 0$ | grows | growing oscillation |
+The figure below shows the signal produced by an $s$ in each part of the plane. The faint
+dots below the axis are the conjugate partners of the ones above.
 
-This table comes back throughout the course: the real part of $s$ decides decay or
-growth, and the imaginary part decides oscillation.
+![Root positions in the complex plane and the signal each produces](../assets/figures/s_plane_map.svg#only-light)
+![Root positions in the complex plane and the signal each produces](../assets/figures/s_plane_map_dark.svg#only-dark)
+
+The real part of $s$ decides decay or growth, and the imaginary part decides oscillation.
+This picture comes back throughout the course.
 
 In C++, `std::complex<double>` provides all of this, including `std::abs`, `std::arg`,
 and `std::exp`.

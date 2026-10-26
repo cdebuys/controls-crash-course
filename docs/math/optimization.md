@@ -8,7 +8,11 @@ mass it's $\tfrac{1}{2}mv^2$, and for a robot arm it's $\tfrac{1}{2}\dot{\mathbf
 
 $Q$ is **positive definite** if $\mathbf{x}^T Q \mathbf{x} > 0$ for every nonzero $\mathbf{x}$.
 Equivalently, all its eigenvalues are positive. Its graph is a bowl with a single lowest
-point.
+point. A matrix with eigenvalues of both signs gives a saddle instead. Along some
+directions a saddle curves up, along others down, so it has no minimum:
+
+![Contours of a positive-definite quadratic, a bowl, and an indefinite one, a saddle](../assets/figures/quadratic_bowl_saddle.svg#only-light)
+![Contours of a positive-definite quadratic, a bowl, and an indefinite one, a saddle](../assets/figures/quadratic_bowl_saddle_dark.svg#only-dark)
 
 ## Minimizing a quadratic
 
@@ -19,7 +23,7 @@ f(\mathbf{x}) = \tfrac{1}{2}\mathbf{x}^T Q \mathbf{x} - \mathbf{c}^T\mathbf{x}
 $$
 
 with $Q$ positive definite, set every partial derivative to zero. That gives a linear
-system, $Q\mathbf{x} = \mathbf{c}$, with one solution: the bottom of the bowl.
+system, $Q\mathbf{x} = \mathbf{c}$, with one solution: the bottom of the bowl in the figure.
 
 ## Least squares
 

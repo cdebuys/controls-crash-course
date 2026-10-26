@@ -39,6 +39,13 @@ $$
 \mathbf{v}_2 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}
 $$
 
+The figure shows $A$ acting on both eigenvectors and on one other vector,
+$\mathbf{w} = [1,\ 0]^T$. Each eigenvector stays on its own line; the eigenvalues here are
+negative, so both flip. $\mathbf{w}$ lands on a different line.
+
+![Eigenvectors stay on their own line under A, while another vector turns](../assets/figures/eigenvectors.svg#only-light)
+![Eigenvectors stay on their own line under A, while another vector turns](../assets/figures/eigenvectors_dark.svg#only-dark)
+
 ## Why they matter
 
 Along an eigenvector, a matrix acts like plain multiplication by a number. That makes
