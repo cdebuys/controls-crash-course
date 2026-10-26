@@ -4,17 +4,17 @@
 
 The mass-spring-damper is the "hello world" of dynamic systems. A block of mass $m$
 slides on a frictionless surface. A spring with stiffness $k$ connects it to a wall,
-and a damper (think of a shock absorber) with coefficient $c$ resists its motion.
+and a damper (think of a shock absorber) with coefficient $b$ resists its motion.
 
 Let $x(t)$ be the block's displacement from its resting position. Two forces act on it:
 
 - **The spring** pulls it back toward rest with a force proportional to displacement: $-kx$.
-- **The damper** opposes motion with a force proportional to velocity: $-c\dot{x}$.
+- **The damper** opposes motion with a force proportional to velocity: $-b\dot{x}$.
 
 Newton's second law, $m\ddot{x} = \sum F$, gives the governing differential equation:
 
 $$
-m\ddot{x} + c\dot{x} + kx = 0
+m\ddot{x} + b\dot{x} + kx = 0
 $$
 
 ### Natural frequency and damping ratio
@@ -27,7 +27,7 @@ $$
 \qquad
 \omega_n = \sqrt{\frac{k}{m}},
 \qquad
-\zeta = \frac{c}{2\sqrt{km}}
+\zeta = \frac{b}{2\sqrt{km}}
 $$
 
 The **natural frequency** $\omega_n$ (rad/s) sets how fast the system wants to
@@ -48,24 +48,28 @@ forward in time instead. Rewrite the second-order equation as two first-order on
 $$
 \dot{x} = v,
 \qquad
-\dot{v} = -\frac{c\,v + k\,x}{m},
+\dot{v} = -\frac{b\,v + k\,x}{m},
 $$
 
+
 and advance $(x, v)$ by a small time step $\Delta t$ over and over. The widget below
-does exactly that with the fourth-order Runge-Kutta method (RK4), using
+does exactly that, live, with the fourth-order Runge-Kutta method (RK4) and
 $\Delta t = 1\text{ ms}$.
 
 ## Try it
 
-The block has mass $m = 1\text{ kg}$ and starts at rest, pulled out to
-$x_0 = 1\text{ m}$. Move the sliders and watch how $\zeta$ changes the response.
-Can you find the stiffness and damping that give critical damping?
+The block has mass $m = 1\text{ kg}$. Press **Impulse** to strike it. An impulse $J$
+changes the block's velocity instantly by $\Delta v = J/m$; here
+$J = 1.5\text{ N·s}$. Change $k$ and $b$ at any time, even mid-swing, and watch how
+$\zeta$ changes the response. For a given stiffness, can you find the damping that
+gives critical damping?
 
 <style>
 .msd-widget { border: 1px solid var(--md-default-fg-color--lightest); border-radius: 0.2rem; padding: 0.8rem 1rem; margin: 1em 0; }
-.msd-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.4rem 1.5rem; }
+.msd-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.4rem 1.5rem; align-items: end; }
 .msd-controls label { display: flex; flex-direction: column; gap: 0.2rem; }
 .msd-controls input[type="range"] { width: 100%; accent-color: var(--md-accent-fg-color); }
+.msd-controls .md-button { margin: 0; justify-self: start; }
 .msd-readout { margin: 0.6rem 0; font-size: 0.75rem; color: var(--md-default-fg-color--light); }
 .msd-anim { display: block; width: 100%; height: 120px; }
 .msd-plot { position: relative; height: 280px; }
@@ -74,12 +78,13 @@ Can you find the stiffness and damping that give critical damping?
   <div class="msd-controls">
     <label>
       <span>Spring constant <em>k</em> = <output id="msd-k-val"></output> N/m</span>
-      <input type="range" id="msd-k" min="0.5" max="50" step="0.5" value="10">
+      <input type="range" id="msd-k" min="1" max="50" step="0.5" value="10">
     </label>
     <label>
-      <span>Damping coefficient <em>c</em> = <output id="msd-c-val"></output> N·s/m</span>
-      <input type="range" id="msd-c" min="0" max="10" step="0.1" value="1">
+      <span>Damping coefficient <em>b</em> = <output id="msd-b-val"></output> N·s/m</span>
+      <input type="range" id="msd-b" min="0" max="10" step="0.1" value="1">
     </label>
+    <button type="button" class="md-button md-button--primary" id="msd-impulse">Impulse</button>
   </div>
   <p class="msd-readout" id="msd-readout"></p>
   <canvas class="msd-anim" id="msd-anim"></canvas>
@@ -88,28 +93,24 @@ Can you find the stiffness and damping that give critical damping?
 <script>
 (function () {
   "use strict";
-  // Physical setup: fixed mass, released from rest at X0.
-  const M = 1.0, X0 = 1.0, V0 = 0.0;
-  // Simulation: RK4 with a 1 ms step over 10 s, keeping every 20th sample (50 Hz) for drawing.
-  const T_END = 10.0, DT = 0.001, SAMPLE_EVERY = 20, SAMPLE_DT = DT * SAMPLE_EVERY;
+  const M = 1.0;            // mass (kg)
+  const IMPULSE = 1.5;      // impulse per button press (N·s)
+  const DT = 0.001;         // RK4 step (s)
+  const SAMPLE_EVERY = 20;  // keep every 20th step for the plot (50 Hz)
+  const WINDOW = 10.0;      // seconds of history shown on the plot
+  const MAX_FRAME_DT = 0.05;  // cap per-frame catch-up, e.g. after a background tab
+  const X_VIEW = 1.6;       // displacement range shown (m)
   // Returns [dx/dt, dv/dt] for state (x, v).
-  function deriv(x, v, k, c) {
-    return [v, -(c * v + k * x) / M];
+  function deriv(x, v, k, b) {
+    return [v, -(b * v + k * x) / M];
   }
-  function simulate(k, c) {
-    const steps = Math.round(T_END / DT);
-    const points = [{ x: 0, y: X0 }];
-    let x = X0, v = V0;
-    for (let i = 1; i <= steps; i++) {
-      const k1 = deriv(x, v, k, c);
-      const k2 = deriv(x + 0.5 * DT * k1[0], v + 0.5 * DT * k1[1], k, c);
-      const k3 = deriv(x + 0.5 * DT * k2[0], v + 0.5 * DT * k2[1], k, c);
-      const k4 = deriv(x + DT * k3[0], v + DT * k3[1], k, c);
-      x += (DT / 6) * (k1[0] + 2 * k2[0] + 2 * k3[0] + k4[0]);
-      v += (DT / 6) * (k1[1] + 2 * k2[1] + 2 * k3[1] + k4[1]);
-      if (i % SAMPLE_EVERY === 0) points.push({ x: i * DT, y: x });
-    }
-    return points;
+  function rk4Step(s, k, b) {
+    const k1 = deriv(s.x, s.v, k, b);
+    const k2 = deriv(s.x + 0.5 * DT * k1[0], s.v + 0.5 * DT * k1[1], k, b);
+    const k3 = deriv(s.x + 0.5 * DT * k2[0], s.v + 0.5 * DT * k2[1], k, b);
+    const k4 = deriv(s.x + DT * k3[0], s.v + DT * k3[1], k, b);
+    s.x += (DT / 6) * (k1[0] + 2 * k2[0] + 2 * k3[0] + k4[0]);
+    s.v += (DT / 6) * (k1[1] + 2 * k2[1] + 2 * k3[1] + k4[1]);
   }
   // Reads colors from the Material theme so the widget follows light/dark mode.
   function themeColors() {
@@ -120,88 +121,75 @@ Can you find the stiffness and damping that give critical damping?
       fgLight: get("--md-default-fg-color--light", "#666"),
       fgLightest: get("--md-default-fg-color--lightest", "#ddd"),
       primary: get("--md-primary-fg-color", "#3f51b5"),
-      accent: get("--md-accent-fg-color", "#526cfe"),
     };
   }
   function init() {
     const kInput = document.getElementById("msd-k");
-    const cInput = document.getElementById("msd-c");
+    const bInput = document.getElementById("msd-b");
     const kVal = document.getElementById("msd-k-val");
-    const cVal = document.getElementById("msd-c-val");
+    const bVal = document.getElementById("msd-b-val");
     const readout = document.getElementById("msd-readout");
     const anim = document.getElementById("msd-anim");
     const ctx = anim.getContext("2d");
     let colors = themeColors();
-    let points = [];
-    let startTime = performance.now();
-    let simTime = 0;
-    // Draws a vertical line on the plot at the animation's current time.
-    const timeCursor = {
-      id: "msdTimeCursor",
-      afterDatasetsDraw(chart) {
-        const px = chart.scales.x.getPixelForValue(simTime);
-        const area = chart.chartArea;
-        chart.ctx.save();
-        chart.ctx.strokeStyle = colors.accent;
-        chart.ctx.lineWidth = 1;
-        chart.ctx.beginPath();
-        chart.ctx.moveTo(px, area.top);
-        chart.ctx.lineTo(px, area.bottom);
-        chart.ctx.stroke();
-        chart.ctx.restore();
-      },
-    };
+    let k = 0, b = 0;
+    const state = { x: 0, v: 0 };
+    let t = 0, steps = 0, accumulator = 0, lastTs = null;
+    const samples = [{ x: 0, y: 0 }];
     const chart = new Chart(document.getElementById("msd-plot"), {
       type: "line",
-      data: { datasets: [{ data: [], borderWidth: 2, pointRadius: 0 }] },
+      data: { datasets: [{ data: samples, borderWidth: 2, pointRadius: 0 }] },
       options: {
         animation: false,
         parsing: false,
         responsive: true,
         maintainAspectRatio: false,
-        interaction: { mode: "nearest", axis: "x", intersect: false },
-        plugins: { legend: { display: false } },
+        events: [],
+        plugins: { legend: { display: false }, tooltip: { enabled: false } },
         scales: {
-          x: { type: "linear", min: 0, max: T_END, title: { display: true, text: "Time t (s)" } },
-          y: { min: -1.1, max: 1.1, title: { display: true, text: "Displacement x (m)" } },
+          x: { type: "linear", min: 0, max: WINDOW, title: { display: true, text: "Time t (s)" } },
+          y: { min: -X_VIEW, max: X_VIEW, title: { display: true, text: "Displacement x (m)" } },
         },
       },
-      plugins: [timeCursor],
     });
     function applyChartTheme() {
-      const ds = chart.data.datasets[0];
-      ds.borderColor = colors.primary;
+      chart.data.datasets[0].borderColor = colors.primary;
       for (const axis of [chart.options.scales.x, chart.options.scales.y]) {
-        axis.ticks = { color: colors.fgLight };
+        axis.ticks = { color: colors.fgLight, precision: 1 };
         axis.grid = { color: colors.fgLightest };
         axis.title.color = colors.fgLight;
       }
       chart.update("none");
     }
-    function recompute() {
-      const k = parseFloat(kInput.value);
-      const c = parseFloat(cInput.value);
+    // Sliders only change the parameters; the motion carries on from its current state.
+    function readParams() {
+      k = parseFloat(kInput.value);
+      b = parseFloat(bInput.value);
       kVal.textContent = k.toFixed(1);
-      cVal.textContent = c.toFixed(1);
+      bVal.textContent = b.toFixed(1);
       const wn = Math.sqrt(k / M);
-      const zeta = c / (2 * Math.sqrt(k * M));
+      const zeta = b / (2 * Math.sqrt(k * M));
       let regime;
       if (zeta === 0) regime = "undamped";
       else if (Math.abs(zeta - 1) < 0.01) regime = "critically damped";
       else if (zeta < 1) regime = "underdamped";
       else regime = "overdamped";
       readout.textContent = "ω_n = " + wn.toFixed(2) + " rad/s, ζ = " + zeta.toFixed(3) + " (" + regime + ")";
-      points = simulate(k, c);
-      chart.data.datasets[0].data = points;
-      chart.update("none");
-      startTime = performance.now();
     }
-    // Linear interpolation of displacement at time t from the sampled trajectory.
-    function displacementAt(t) {
-      const f = t / SAMPLE_DT;
-      const i = Math.min(Math.floor(f), points.length - 2);
-      const a = f - i;
-      return points[i].y * (1 - a) + points[i + 1].y * a;
+    function applyImpulse() {
+      state.v += IMPULSE / M;
+    }
+    // Advances the simulation by `elapsed` seconds of wall-clock time in fixed RK4 steps.
+    function advance(elapsed) {
+      accumulator += elapsed;
+      while (accumulator >= DT) {
+        rk4Step(state, k, b);
+        accumulator -= DT;
+        t += DT;
+        steps++;
+        if (steps % SAMPLE_EVERY === 0) samples.push({ x: t, y: state.x });
+      }
+      while (samples.length > 0 && samples[0].x < t - WINDOW) samples.shift();
     }
     function resizeAnim() {
       const dpr = window.devicePixelRatio || 1;
@@ -214,9 +202,10 @@ Can you find the stiffness and damping that give critical damping?
       const wallX = 16, blockW = 48, blockH = 48;
       const groundY = h - 16;
       const restCenter = w / 2;
-      // Scale so the block stays on screen over the full range x in [-1.1, 1.1].
-      const scale = (w / 2 - wallX - blockW) / 1.1;
-      const blockLeft = restCenter + x * scale - blockW / 2;
+      // Scale so the block stays on screen over x in [-X_VIEW, X_VIEW]; clamp beyond that.
+      const scale = (w / 2 - wallX - blockW) / X_VIEW;
+      const shownX = Math.max(-X_VIEW, Math.min(X_VIEW, x));
+      const blockLeft = restCenter + shownX * scale - blockW / 2;
       const midY = groundY - blockH / 2;
       ctx.clearRect(0, 0, w, h);
       ctx.lineWidth = 2;
@@ -259,15 +248,19 @@ Can you find the stiffness and damping that give critical damping?
       ctx.textBaseline = "middle";
       ctx.fillText("m", blockLeft + blockW / 2, midY);
     }
-    // Replays the trajectory in real time, looping every T_END seconds.
-    function frame(now) {
-      simTime = ((now - startTime) / 1000) % T_END;
-      drawScene(displacementAt(simTime));
-      chart.draw();
+    // Runs the simulation in real time. Only frame timestamps are used for timing.
+    function frame(ts) {
+      if (lastTs !== null) advance(Math.min(MAX_FRAME_DT, Math.max(0, (ts - lastTs) / 1000)));
+      lastTs = ts;
+      chart.options.scales.x.min = Math.max(0, t - WINDOW);
+      chart.options.scales.x.max = Math.max(WINDOW, t);
+      chart.update("none");
+      drawScene(state.x);
       requestAnimationFrame(frame);
     }
-    kInput.addEventListener("input", recompute);
-    cInput.addEventListener("input", recompute);
+    kInput.addEventListener("input", readParams);
+    bInput.addEventListener("input", readParams);
+    document.getElementById("msd-impulse").addEventListener("click", applyImpulse);
     window.addEventListener("resize", resizeAnim);
     // Material toggles light/dark by changing this attribute on <body>.
     new MutationObserver(() => {
@@ -276,7 +269,8 @@ Can you find the stiffness and damping that give critical damping?
     }).observe(document.body, { attributes: true, attributeFilter: ["data-md-color-scheme"] });
     resizeAnim();
     applyChartTheme();
-    recompute();
+    readParams();
+    applyImpulse();  // start with one strike so the page isn't static on load
     requestAnimationFrame(frame);
   }
   // MkDocs loads extra_javascript (Chart.js) after the page content, so wait for it.
