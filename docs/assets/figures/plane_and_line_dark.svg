@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 390" font-family="sans-serif" role="img" aria-labelledby="pl-title">
+  <title id="pl-title">An input split into a row-space part in the xy-plane and a null-space part along the z-axis</title>
+  <style>
+    .text  { fill: #e2e4e9; }
+    .muted { fill: #9aa0ab; }
+    .axis  { stroke: #9aa0ab; stroke-width: 1.5; }
+    .plane { fill: #8c9eff; fill-opacity: 0.18; stroke: #9aa0ab; stroke-width: 1.5; }
+    .guide { stroke: #9aa0ab; stroke-width: 1.2; stroke-dasharray: 5 4; fill: none; }
+    .vec   { stroke: #e2e4e9; stroke-width: 2.4; }
+    .vec-r { stroke: #8c9eff; stroke-width: 2.4; }
+    .vec-n { stroke: #ffab40; stroke-width: 2.4; }
+    .dot   { fill: #e2e4e9; }
+  </style>
+  <defs>
+    <marker id="pl-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e2e4e9"/>
+    </marker>
+    <marker id="pl-head-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8c9eff"/>
+    </marker>
+    <marker id="pl-head-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffab40"/>
+    </marker>
+  </defs>
+
+  <!-- z-axis below the plane, drawn first so the plane covers it -->
+  <line x1="300" y1="260" x2="300" y2="345" class="axis"/>
+
+  <!-- Row space: the xy-plane -->
+  <polygon points="229.8,197.6 58.2,322.4 370.2,322.4 541.8,197.6" class="plane"/>
+
+  <!-- Null space: the z-axis above the plane -->
+  <line x1="300" y1="260" x2="300" y2="60" class="axis"/>
+
+  <!-- Right angle between the line and the plane -->
+  <path d="M 300,246 L 312.9,251.4 L 312.9,265.4" class="axis" fill="none"/>
+
+  <!-- Completing the split: x = x_r + x_n -->
+  <line x1="368.4" y1="156.8" x2="368.4" y2="288.8" class="guide"/>
+  <line x1="368.4" y1="156.8" x2="300" y2="128" class="guide"/>
+
+  <!-- The vectors -->
+  <line x1="300" y1="260" x2="366.3" y2="287.9" class="vec-r" marker-end="url(#pl-head-r)"/>
+  <line x1="300" y1="260" x2="300" y2="131" class="vec-n" marker-end="url(#pl-head-n)"/>
+  <line x1="300" y1="260" x2="366.9" y2="159.3" class="vec" marker-end="url(#pl-head)"/>
+  <circle cx="300" cy="260" r="4" class="dot"/>
+
+  <!-- Vector labels -->
+  <text x="378" y="152" font-size="17" font-style="italic" font-weight="bold" class="text">x</text>
+  <text x="378" y="304" font-size="17" font-style="italic" class="text">xᵣ</text>
+  <text x="287" y="133" font-size="17" font-style="italic" text-anchor="end" class="text">xₙ</text>
+  <text x="286" y="279" font-size="14" text-anchor="end" class="text">0</text>
+  <text x="440" y="120" font-size="16" font-style="italic" class="text">x = xᵣ + xₙ</text>
+
+  <!-- Space labels -->
+  <text x="312" y="70" font-size="14" font-weight="bold" class="text">null space N(A)</text>
+  <text x="312" y="88" font-size="14" class="muted">the z-axis</text>
+  <text x="60" y="350" font-size="14" font-weight="bold" class="text">row space C(Aᵀ)</text>
+  <text x="60" y="368" font-size="14" class="muted">the xy-plane</text>
+</svg>

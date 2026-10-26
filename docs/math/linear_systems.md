@@ -27,11 +27,26 @@ On the input side:
 
 - The **null space** $N(A)$, also called the **kernel**, is the set of inputs $A$ maps to
   zero: all $\mathbf{n}$ with $A\mathbf{n} = 0$. Its dimension is $n - r$.
-- The **row space** $C(A^T)$ holds everything else. Its dimension is also $r$.
+- The **row space** $C(A^T)$ is every combination of the rows of $A$. Its dimension is
+  also $r$.
 
-On each side the two spaces are at right angles, and together they cover everything. So
-any input splits as $\mathbf{x} = \mathbf{x}_r + \mathbf{x}_n$, a row-space part plus a
-null-space part, and $A\mathbf{x} = A\mathbf{x}_r$: the null-space part contributes nothing.
+Each shape in the figure above stands for a whole space of vectors through the origin: a
+line, a plane, or a higher-dimensional version. On each side the two spaces are at right
+angles: every vector in one is perpendicular to every vector in the other. On the input
+side, this follows from $A\mathbf{n} = 0$, which says each row of $A$ has a zero
+[dot product](vectors_matrices.md#vectors) with $\mathbf{n}$. Their dimensions also add
+up to the full space, so every vector is a sum of one piece from each.
+
+For example, $A = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}$ keeps the first two
+entries of $\mathbf{x}$ and drops the third. Its row space is the $xy$-plane and its null
+space is the $z$-axis, as in the figure below:
+
+![An input split into its row-space part in the xy-plane and its null-space part along the z-axis](../assets/figures/plane_and_line.svg#only-light)
+![An input split into its row-space part in the xy-plane and its null-space part along the z-axis](../assets/figures/plane_and_line_dark.svg#only-dark)
+
+The dashed lines split the input $\mathbf{x}$ into its part in the plane, $\mathbf{x}_r$
+(blue), and its part along the line, $\mathbf{x}_n$ (orange). $A$ keeps $\mathbf{x}_r$
+and discards $\mathbf{x}_n$, so $A\mathbf{x} = A\mathbf{x}_r$.
 
 A matrix is **full rank** when $r$ is as large as its shape allows, the smaller of $m$
 and $n$.
